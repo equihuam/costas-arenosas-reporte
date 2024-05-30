@@ -4,7 +4,7 @@
 
 bnet NA {
 autoupdate = TRUE;
-whenchanged = 1717091325;
+whenchanged = 1717091827;
 
 visual V1 {
     defdispform = BELIEFBARS;
@@ -40,10 +40,23 @@ node eti1 {
     kind = NATURE;
     chance = CHANCE;
     parents = ();
-    whenchanged = 1717091325;
+    whenchanged = 1717091827;
     visual V1 {
         center = (0, 0);
         height = 1;
+        };
+    };
+
+node eti3 {
+    discrete = TRUE;
+    states = (A, B, C);
+    kind = NATURE;
+    chance = CHANCE;
+    parents = ();
+    whenchanged = 1717091827;
+    visual V1 {
+        center = (176, 800);
+        height = 2;
         };
     };
 
@@ -52,11 +65,11 @@ node eti2 {
     states = (A, B, C);
     kind = NATURE;
     chance = CHANCE;
-    parents = (eti1);
-    whenchanged = 1717091325;
+    parents = (eti1,eti3);
+    whenchanged = 1717091827;
     visual V1 {
         center = (1500, 0);
-        height = 2;
+        height = 3;
         };
     };
 };
