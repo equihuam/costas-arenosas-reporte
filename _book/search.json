@@ -1,25 +1,5 @@
 [
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introducción",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming (Knuth, 1984)\n\n1 + 1\n\n[1] 2\n\n\n\n\nThis column takes 1/3 of the page (4 of 12 “arbitrary units” wide)\n\n\nThis column takes 2/3 of the page (8 of 12 “arbitrary units” wide)\n\n\n\n\n\n\nKnuth, D. E. (1984). Literate programming. Comput. J., 27(2), 97–111. https://doi.org/10.1093/comjnl/27.2.97",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducción</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, D. E. (1984). Literate programming. Comput. J.,\n27(2), 97–111. https://doi.org/10.1093/comjnl/27.2.97\n\n\nPérez-Maqueo, O., Martinez, M. L., Vázquez, G., & Equihua, M.\n(2012). Using Four Capitals to Assess Watershed Sustainability.\nEnvironmental Management, 51(3), 679–693. https://doi.org/10.1007/s00267-012-9972-9",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Prueba-oct",
@@ -30,23 +10,83 @@
     ]
   },
   {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introducción",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming (Knuth, 1984)\n\n1 + 1\n\n[1] 2\n\n\n\n\nThis column takes 1/3 of the page (4 of 12 “arbitrary units” wide)\n\n\nThis column takes 2/3 of the page (8 of 12 “arbitrary units” wide)\n\n\n\n\n\n\nKnuth, D. E. (1984). Literate programming. Comput. J., 27(2), 97–111. https://doi.org/10.1093/comjnl/27.2.97",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducción</span>"
+    ]
+  },
+  {
+    "objectID": "miro-costas.html",
+    "href": "miro-costas.html",
+    "title": "2  Miro",
+    "section": "",
+    "text": "2.1 Construcción colaborativa de Redes Bayesianas\nHemos preparado una biblioteca con las rutinas que se describen aquí, para que las puedan usar según se requiera. Para descargarlas usa el botón que sigue.\nDescarga la biblioteca miro2bayes",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Miro</span>"
+    ]
+  },
+  {
+    "objectID": "miro-costas.html#construcción-colaborativa-de-redes-bayesianas",
+    "href": "miro-costas.html#construcción-colaborativa-de-redes-bayesianas",
+    "title": "2  Miro",
+    "section": "",
+    "text": "La propuesta que hacemos es usar Miro como plataforma de debate y construcción de concenso. Buscamos así aproximarnos a la estructura causal que vincula las variables que determinan el rendimiento y la sustentabilidad (social, económica y ambiental). Una vez resuelta esta etapa, es necesario transferir lo acordado en Miro a plataformas de análisis estadístico. Aquí, nos propusimos trasladar los resultados de Miro a R. Al hacer esto las posibilidades analíticas se potencian muy ampliamente. Como veremos, podemos recurrir a dagitty o incluso utilizar Python y Netica. Para hacer esto optamos por la ruta de acceso commputacional a través de la interfase “REST”. Esto implica usar la biblioteca httr en R.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Miro</span>"
+    ]
+  },
+  {
+    "objectID": "miro-costas.html#acceder-a-miro",
+    "href": "miro-costas.html#acceder-a-miro",
+    "title": "2  Miro",
+    "section": "2.2 Acceder a Miro",
+    "text": "2.2 Acceder a Miro\nEn preparación para usar REST se requiere tener permisos de acceso de acuerdo con las especificaciones que se dan aquí. Estas credenciales hay que evitar distribuirlas, así que en este ejercicio utilizo la biblioteca keyring para mantenerlas confidenciales. Esta biblioteca permite utilizar el sistema de seguridad del equipo para la gestión de las claves. Para dar de alta una llave utilicé en este caso la instrucción siguiente:\nkey_set(service = \"miro\", username = \"miguel-token\")\nUna vez registrada en el equipo la llave, queda lista para su uso en cualquier momento con la función key_get.\nHay Explicaciones y ayuda para producir el código. Se encuentran aquí. Es muy amigable pues produce ejemplos concretos con los atributos particulares de interés del usuario.\nPor ejemplo, veamos como recuperar los datos de acceso a un tablero particular simplemente verificando las credenciales que reconoce Miro al consultarle.\nEl resultado que regresa Miro es un json así que utilizaré la biblioteca jsonlitepara convertirlo a un dataframe.\n\nlibrary(devtools)\ninstall_github(\"equihuam/miro2bayesNet\", force = TRUE)\n\n\n── R CMD build ─────────────────────────────────────────────────────────────────\n* checking for file 'C:\\Users\\equih\\AppData\\Local\\Temp\\RtmpuGXcnP\\remotes29b818226764\\equihuam-miro2bayesNet-3ed9e96/DESCRIPTION' ... OK\n* preparing 'miro2bayes':\n* checking DESCRIPTION meta-information ... OK\n* checking for LF line-endings in source and make files and shell scripts\n* checking for empty or unneeded directories\n* building 'miro2bayes_2.50.15.tar.gz'\n\n\nlibrary(miro2bayes)\nlibrary(bnlearn)\nlibrary(bnviewer)\nlibrary(tidyverse)\n\ntableros &lt;- miroBoards(servMiro = \"miro\", user = \"miguel-edu-token\")\ntableros[, c(\"name\", \"id\")]\n\n                                name           id\n1                      Costa arenosa uXjVKB6PRSY=\n2              Education Plan Basics uXjVPZCsPDE=\n3 Education Plan Apps & Integrations uXjVPZCsPUo=\n4      Education Plan Administration uXjVPZCsPVc=\n5    Education Plan Useful Resources uXjVPZCsPVQ=\n\ntablero_tr &lt;- tableros %&gt;%\n              filter(str_detect(name, \"Costa\")) %&gt;%\n              select(id, name)\n\ndatos_miro &lt;- getMiro(servMiro = \"miro\", user = \"miguel-edu-token\",\n                        board = tablero_tr)\n\nmiroValidation(datos_miro)\n\nMiro board origin:      Costa arenosa\nIs it a TRUE DAG?:      Graph is acyclic\nNumber of sticky notes: 3\nNodes without var:      1\nNumber of linked nodes: 2\nDuplicated nodes:       0\nNumber of arcs:         1\nWell connected arcs:    1\nNumb. Loose arcs:       0\nDuplicated arcs:        0\n\nneticaMiro &lt;- miro2DNE(datos_miro)\n\nwrite(neticaMiro, \"costa-arenosa.dne\")\n\nnetMiro_bn &lt;- miro2bnlearn(datos_miro)\nnetMiro_bn\n\n\n  Random/Generated Bayesian network\n\n  model:\n   [eti1][eti2|eti1] \n  nodes:                                 2 \n  arcs:                                  1 \n    undirected arcs:                     0 \n    directed arcs:                       1 \n  average markov blanket size:           1.00 \n  average neighbourhood size:            1.00 \n  average branching factor:              0.50 \n\n  generation algorithm:                  Empty \n\nvariables &lt;- tibble(var = datos_miro$nodes$var)\n\ngraphviz.plot(netMiro_bn, layout = \"dot\")",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Miro</span>"
+    ]
+  },
+  {
+    "objectID": "miro-costas.html#resumen",
+    "href": "miro-costas.html#resumen",
+    "title": "2  Miro",
+    "section": "2.3 Resumen",
+    "text": "2.3 Resumen\n\n2.3.1 Conceptos y recomendaciones\nSe demuestra la interacción con un Tablero Miro desde R para generar una red bayesiana en forma colaborativa. Para facilitar el procedimiento se convino usar la siguiente rutina de integración del tablero:\n\nUna Red Bayesiana siempre es un DAG (grafo acíclico dirigido), consta de nodos (las notas adhesivas) y arcos los conectores que indican la existencia (a veces sólo la sospecha) de interacción causal entre variables. Estos arcos tienen una orientación, de ahí que los representemos por flechas con la causa en la cola y en el efecto en la punta (normalmente el resultado esperado, la casa antecede al efecto). Hay que asegurar en Miro que el contacto de cada conector con los dos nodos que vincula quede establecida. Miro sugiere contacto válido destacando en gris el nodo que toca la flecha. Una vez hecho el contacto, la flecha puede ubicarse en cualquier posición sobre el borde gris que aparece en torno al papelito. Puede ser que haya arcos que no quedaron adecuadamente ligados a sus papelitos de inicio o final. Esto es una inconsistencia técnica para los fine de extracción de datos.\n\n\n\n\n\n\n\n\nCada Nodo deberá ser representado por una sola Nota adhesiva (“sticky note”). En este papelito se puede acomodar el texto descriptivo que se desee, pero conviene definir operacionalmente la variable y especificar la escala de medición y posible patrón de discretización o conjunto de niveles que puede tomar.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCada nodo deberá tener una etiqueta vinculada, que especifique el nombre de la variable que lo representará en forma única. Deberá coincidir con la forma como se etiquetan los datos respectivos en la base de datos de que se disponga para el análisis. Se recomienda usar nombres cortos, alrededor de 10 caracteres alfanuméricos (ASCII para Netica), sin marcas diacríticas o símbolos, ni espacios. Como separador usar guión bajo.\n\n\n\n\n\n\n\n\nEn el enfoque causal que estamos proponiendo, las propiedades del DAG son importantes. El modelo bayesiano representa una propuesta del proceso generador de la distribución de probabilidades conjunta del sistema. Esto es importante, no sólo como una propiedad matemática del modelo, sino porque el DAG describe patrones específicos de correlación e independencia condicional que deben existir entre todos los factores involucrados, asumiendo que es válido el DAG propuesto. Además, en el diseño de políticas públicas interesa influir sobre el comportamiento del sistema. En todos los casos esto permite considerar los patrones específicos de independencia condicional que emergen, por implicación, de la estructura causal del sistema y que determinarán las consecuencias esperadas de las intervenciones planeadas.\nCon toda la información reunida en Miro es posible transferir la estructura de la red a Netica. No será una red completamente funcional, sólo incluirá los nodos con los nombres y vínculos acordados y registrados en Miro. Con base en esta información se tiene lo necesario para construir la red en la forma que convenga a varias plataformas de análisis: bnlearn en R o causalnex, pomegranate, pgmpy en Python.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Miro</span>"
+    ]
+  },
+  {
     "objectID": "cap1/Chapter-1.html",
     "href": "cap1/Chapter-1.html",
-    "title": "2  Chapter 2",
+    "title": "3  Chapter 2",
     "section": "",
-    "text": "Something very interesting.\nTabla ejemplo\n\n\n\n\n\n\n \n\n\n\n\n\nTable 2.1: My Caption\n\n\n\n\n\nCol1\nAsunto\n\n\n\n\nContenido\n1\n\n\nEjemplo\n3\n\n\nFin\n4\n\n\n\n\n\n\n\n\n \n\n\n\nSee Table 2.1.\n\n\n\nCaption",
+    "text": "Something very interesting.\nTabla ejemplo\n\n\n\n\n\n\n \n\n\n\n\n\nTable 3.1: My Caption\n\n\n\n\n\nCol1\nAsunto\n\n\n\n\nContenido\n1\n\n\nEjemplo\n3\n\n\nFin\n4\n\n\n\n\n\n\n\n\n \n\n\n\nSee Table 3.1.\n\n\n\nCaption",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Chapter 2</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Chapter 2</span>"
     ]
   },
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "3  Summary",
+    "title": "4  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, D. E. (1984). Literate programming. Comput. J.,\n27(2), 97–111. https://doi.org/10.1093/comjnl/27.2.97\n\n\nPérez-Maqueo, O., Martinez, M. L., Vázquez, G., & Equihua, M.\n(2012). Using Four Capitals to Assess Watershed Sustainability.\nEnvironmental Management, 51(3), 679–693. https://doi.org/10.1007/s00267-012-9972-9",
+    "crumbs": [
+      "References"
     ]
   }
 ]

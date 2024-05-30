@@ -27,6 +27,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - miro-costas.qmd
     - cap1/Chapter-1.qmd
     - summary.qmd
     - references.qmd
