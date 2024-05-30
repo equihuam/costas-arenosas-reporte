@@ -1,0 +1,47 @@
+project:
+  type: book
+
+book:
+  title: "Prueba-oct"
+  sidebar: 
+    background: "#B5C9B8"
+    logo: beach-7318494_1920.jpg
+    search: true
+  
+  page-footer:
+    left: |
+      Reporte Costas Arenosas.
+    right: |
+      Reporte editado con <a href="https://quarto.org/">Quarto</a>.
+  cover-image: sunrise-5367028_1280.jpg
+  author:
+  - name: Octavio Pérez-Maqueo 
+    url: https://inecol.mx/
+    affiliation: Ambiente y Sustentabilidad / Inecol
+    affiliation-url: https://inecol.mx
+  - name: Miguel Equihua 
+    url: https://inecol.mx/
+    affiliation: Ambiente y Sustentabilidad / Inecol
+    affiliation-url: https://inecol.mx
+  date: "2024/5/23"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - cap1/Chapter-1.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+csl: apa.csl
+
+citation: 
+  type: book
+  
+format:
+  html:
+    theme: materia
+  pdf:
+    documentclass: scrreprt
+
+
+

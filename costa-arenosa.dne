@@ -1,0 +1,62 @@
+// ~->[DNET-1]->~
+
+// File created by miro2bayesusing Netica 6.05 on Jun 03, 2023 at 03:09:37 UTC.
+
+bnet NA {
+autoupdate = TRUE;
+whenchanged = 1717085682;
+
+visual V1 {
+    defdispform = BELIEFBARS;
+    nodelabeling = TITLE;
+    NodeMaxNumEntries = 50;
+    nodefont = font {shape= "Arial"; size= 9;};
+    linkfont = font {shape= "Arial"; size= 9;};
+    ShowLinkStrengths = 1;
+    windowposn = (26, 26, 1002, 383);
+    resolution = 72;
+    drawingbounds = (1500, 800);
+    showpagebreaks = FALSE;
+    usegrid = TRUE;
+    gridspace = (6, 6);
+    NodeSet Node {BuiltIn = 1; Color = 0x00e1e1e1;};
+    NodeSet Nature {BuiltIn = 1; Color = 0x00f8eed2;};
+    NodeSet Deterministic {BuiltIn = 1; Color = 0x00d3caa6;};
+    NodeSet Finding {BuiltIn = 1; Color = 0x00c8c8c8;};
+    NodeSet Constant {BuiltIn = 1; Color = 0x00ffffff;};
+    NodeSet ConstantValue {BuiltIn = 1; Color = 0x00ffffb4;};
+    NodeSet Utility {BuiltIn = 1; Color = 0x00ffbdbd;};
+    NodeSet Decision {BuiltIn = 1; Color = 0x00dee8ff;};
+    NodeSet Documentation {BuiltIn = 1; Color = 0x00f0fafa;};
+    NodeSet Title {BuiltIn = 1; Color = 0x00ffffff;};
+    PrinterSetting A {
+        margins = (1270, 1270, 1270, 1270);
+        };
+    };
+
+node eti1 {
+    discrete = TRUE;
+    states = (A, B, C);
+    kind = NATURE;
+    chance = CHANCE;
+    parents = ();
+    whenchanged = 1717085682;
+    visual V1 {
+        center = (0, 0);
+        height = 1;
+        };
+    };
+
+node eti2 {
+    discrete = TRUE;
+    states = (A, B, C);
+    kind = NATURE;
+    chance = CHANCE;
+    parents = (eti1);
+    whenchanged = 1717085682;
+    visual V1 {
+        center = (1500, 0);
+        height = 2;
+        };
+    };
+};

@@ -1,0 +1,22 @@
+# Chapter 2
+
+Something very interesting.
+
+Tabla ejemplo
+
+::: {layout="[-1,1,-1]"}
+| Col1      | Asunto |
+|-----------|:------:|
+| Contenido |   1    |
+| Ejemplo   |   3    |
+| Fin       |   4    |
+
+: My Caption {#tbl-letters .striped .hover.striped .hover}
+:::
+
+See @tbl-letters.
+
+![Caption](images/Captura de pantalla 2024-05-11 020540.png){width="200"}
+
+
+
