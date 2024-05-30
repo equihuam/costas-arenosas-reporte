@@ -1,0 +1,22 @@
+# Introducción
+
+This is a book created from markdown and executable code.
+
+See @knuth84 for additional discussion of literate programming [@knuth84]
+
+```{r}
+1 + 1
+```
+
+
+::: {.grid}
+
+::: {.g-col-4}
+This column takes 1/3 of the page (4 of 12 "arbitrary units" wide) 
+:::
+
+::: {.g-col-8}
+This column takes 2/3 of the page (8 of 12 "arbitrary units" wide) 
+:::
+
+:::
