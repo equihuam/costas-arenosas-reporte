@@ -12,7 +12,6 @@ editor_options:
 
 # Miro
 
-
 ## Construcción colaborativa de Redes Bayesianas
 
 ::: {layout-ncol="2"}
@@ -101,4 +100,3 @@ datos_miro$nodes %>%
   formatStyle(columns = colnames(.), fontSize = '10px')
 
 ```
-
