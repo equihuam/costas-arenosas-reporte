@@ -104,6 +104,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script src="site_libs/font-awesome-5.13.0/js/script.js"></script>
 
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+
+<script src="site_libs/datatables-binding-0.33/datatables.js"></script>
+
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+
+<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
 
 
 </head>
@@ -195,10 +215,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#construcción-colaborativa-de-redes-bayesianas" id="toc-construcción-colaborativa-de-redes-bayesianas" class="nav-link" data-scroll-target="#construcción-colaborativa-de-redes-bayesianas"><span class="header-section-number">3.1</span> Construcción colaborativa de Redes Bayesianas</a></li>
   <li><a href="#acceder-a-miro" id="toc-acceder-a-miro" class="nav-link" data-scroll-target="#acceder-a-miro"><span class="header-section-number">3.2</span> Acceder a <em>Miro</em></a></li>
-  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">3.3</span> Resumen</a>
-  <ul class="collapse">
-  <li><a href="#conceptos-y-recomendaciones" id="toc-conceptos-y-recomendaciones" class="nav-link" data-scroll-target="#conceptos-y-recomendaciones"><span class="header-section-number">3.3.1</span> Conceptos y recomendaciones</a></li>
-  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -266,26 +282,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Por ejemplo, veamos como recuperar los datos de acceso a un tablero particular simplemente verificando las credenciales que reconoce <em>Miro</em> al consultarle.</p>
 <p>El resultado que regresa <em>Miro</em> es un <code>json</code> así que utilizaré la biblioteca <code>jsonlite</code>para convertirlo a un <code>dataframe</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">"equihuam/miro2bayesNet"</span>, <span class="at">force =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-── R CMD build ─────────────────────────────────────────────────────────────────
-* checking for file 'C:\Users\equih\AppData\Local\Temp\RtmpmYCMGF\remotes368869324f37\equihuam-miro2bayesNet-3ed9e96/DESCRIPTION' ... OK
-* preparing 'miro2bayes':
-* checking DESCRIPTION meta-information ... OK
-* checking for LF line-endings in source and make files and shell scripts
-* checking for empty or unneeded directories
-* building 'miro2bayes_2.50.15.tar.gz'
-</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(miro2bayes)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bnlearn)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bnviewer)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>tableros <span class="ot">&lt;-</span> <span class="fu">miroBoards</span>(<span class="at">servMiro =</span> <span class="st">"miro"</span>, <span class="at">user =</span> <span class="st">"miguel-edu-token"</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>tableros[, <span class="fu">c</span>(<span class="st">"name"</span>, <span class="st">"id"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(devtools)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install_github("equihuam/miro2bayesNet", force = TRUE)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(miro2bayes)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bnlearn)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bnviewer)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse, <span class="at">quietly =</span> <span class="cn">TRUE</span>, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>tableros <span class="ot">&lt;-</span> <span class="fu">miroBoards</span>(<span class="at">servMiro =</span> <span class="st">"miro"</span>, <span class="at">user =</span> <span class="st">"miguel-edu-token"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>tableros[, <span class="fu">c</span>(<span class="st">"name"</span>, <span class="st">"id"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                name           id
 1                      Costa arenosa uXjVKB6PRSY=
@@ -294,51 +300,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 4      Education Plan Administration uXjVPZCsPVc=
 5    Education Plan Useful Resources uXjVPZCsPVQ=</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tablero_tr <span class="ot">&lt;-</span> tableros <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>              <span class="fu">filter</span>(<span class="fu">str_detect</span>(name, <span class="st">"Costa"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>              <span class="fu">select</span>(id, name)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>datos_miro <span class="ot">&lt;-</span> <span class="fu">getMiro</span>(<span class="at">servMiro =</span> <span class="st">"miro"</span>, <span class="at">user =</span> <span class="st">"miguel-edu-token"</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                        <span class="at">board =</span> tablero_tr)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">miroValidation</span>(datos_miro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tablero_tr <span class="ot">&lt;-</span> tableros <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>              <span class="fu">filter</span>(<span class="fu">str_detect</span>(name, <span class="st">"Costa"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>              <span class="fu">select</span>(id, name)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>datos_miro <span class="ot">&lt;-</span> <span class="fu">getMiro</span>(<span class="at">servMiro =</span> <span class="st">"miro"</span>, <span class="at">user =</span> <span class="st">"miguel-edu-token"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                        <span class="at">board =</span> tablero_tr)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">miroValidation</span>(datos_miro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Miro board origin:      Costa arenosa
 Is it a TRUE DAG?:      Graph is acyclic
-Number of sticky notes: 3
+Number of sticky notes: 40
 Nodes without var:      0
-Number of linked nodes: 3
+Number of linked nodes: 2
 Duplicated nodes:       0
-Number of arcs:         2
-Well connected arcs:    2
+Number of arcs:         1
+Well connected arcs:    1
 Numb. Loose arcs:       0
 Duplicated arcs:        0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>neticaMiro <span class="ot">&lt;-</span> <span class="fu">miro2DNE</span>(datos_miro)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write</span>(neticaMiro, <span class="st">"costa-arenosa.dne"</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>netMiro_bn <span class="ot">&lt;-</span> <span class="fu">miro2bnlearn</span>(datos_miro)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>netMiro_bn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#neticaMiro &lt;- miro2DNE(datos_miro)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#write(neticaMiro, "costa-arenosa.dne")</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>netMiro_bn <span class="ot">&lt;-</span> <span class="fu">miro2bnlearn</span>(datos_miro)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>netMiro_bn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
   Random/Generated Bayesian network
 
   model:
-   [eti1][eti3][eti2|eti1:eti3] 
-  nodes:                                 3 
-  arcs:                                  2 
+   [dir_viento][d50|dir_viento] 
+  nodes:                                 2 
+  arcs:                                  1 
     undirected arcs:                     0 
-    directed arcs:                       2 
-  average markov blanket size:           2.00 
-  average neighbourhood size:            1.33 
-  average branching factor:              0.67 
+    directed arcs:                       1 
+  average markov blanket size:           1.00 
+  average neighbourhood size:            1.00 
+  average branching factor:              0.50 
 
   generation algorithm:                  Empty </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>variables <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">var =</span> datos_miro<span class="sc">$</span>nodes<span class="sc">$</span>var)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">graphviz.plot</span>(netMiro_bn, <span class="at">layout =</span> <span class="st">"dot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>variables <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">var =</span> datos_miro<span class="sc">$</span>nodes<span class="sc">$</span>var)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">graphviz.plot</span>(netMiro_bn, <span class="at">layout =</span> <span class="st">"dot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -347,54 +353,15 @@ Duplicated arcs:        0</code></pre>
 </div>
 </div>
 </div>
-</section>
-<section id="resumen" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="resumen"><span class="header-section-number">3.3</span> Resumen</h2>
-<section id="conceptos-y-recomendaciones" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="conceptos-y-recomendaciones"><span class="header-section-number">3.3.1</span> Conceptos y recomendaciones</h3>
-<p>Se demuestra la interacción con un <a href="https://miro.com/app/board/uXjVMGRTvaE=/">Tablero Miro</a> desde <strong>R</strong> para generar una red bayesiana en forma colaborativa. Para facilitar el procedimiento se convino usar la siguiente rutina de integración del tablero:</p>
-<ol type="1">
-<li>Una <em>Red Bayesiana</em> siempre es un <strong>DAG</strong> (grafo acíclico dirigido), consta de <strong>nodos</strong> (las notas adhesivas) y <strong>arcos</strong> los conectores que indican la existencia (a veces sólo la sospecha) de interacción causal entre variables. Estos arcos tienen una orientación, de ahí que los representemos por flechas con la <em>causa en la cola</em> y en <em>el efecto en la punta</em> (normalmente el resultado esperado, <em>la casa antecede al efecto</em>). Hay que asegurar en <em>Miro</em> que el contacto de cada conector con los dos nodos que vincula quede establecida. Miro sugiere contacto válido <em>destacando en gris</em> el nodo que toca la flecha. Una vez hecho el contacto, la flecha puede ubicarse en cualquier posición sobre el borde gris que aparece en torno al papelito. Puede ser que haya arcos que no quedaron adecuadamente ligados a sus <em>papelitos</em> de inicio o final. Esto es una inconsistencia técnica para los fine de extracción de datos.</li>
-</ol>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<ol start="2" type="1">
-<li>Cada Nodo deberá ser representado por una sola <em>Nota adhesiva</em> (“sticky note”). En este papelito se puede acomodar el texto descriptivo que se desee, pero conviene definir operacionalmente la variable y especificar la escala de medición y posible patrón de discretización o conjunto de niveles que puede tomar.</li>
-</ol>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="imagenes/Miro_sticky_note_marcada.png" class="img-fluid"></p>
+<p>La lista de variables identificadas es:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-56176e77db0052f094fa" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-56176e77db0052f094fa">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40"],["potencia de la ola (datos horarios 1940-2022)https://confluence.ecmwf.int/display/CKB/ERA5%3A&amp;#43;data&amp;#43;documentation","mareasMareografos de Pafícico y Atlántico (SEMAR) RODOLFO","forma de crecimiento de vegetación de dunas:Tomar de base de datos de Ileana/conabio. Zonas con arbustivas tienden mayor erosión. en zonas como dice marisa eso no pasa","disponinibilidad de arena -ancho playa","geología(geomorfología,tipo de roca)Pedir carta geológica minera servicio geologico mexicano. Octavio  y Karla en formato shape &amp;#34;Geológica minera&amp;#34;https://www.sgm.gob.mx/CartasDisponibles/ (en pdf hasta 1:50000)https://www.sgm.gob.mx/GeoInfoMexGobMx/#(shape)","Arrecifes de coral-Buscar la mejor capa: blaqueamiento, Copernicus o Conabiohttps://simar.conabio.gob.mx/explorer/?undefined","pastos marinoshttps://simar.conabio.gob.mx/explorer/?undefined","Disponibilidad de agua salobre o dulce","Flujo subterráneo. Información disponible en SHP (polígonos). Solicitar a Rodolfo / Valeria. Tiene una clasificación. Nivel nacional. Artículo: https://www.mdpi.com/2073-4441/12/9/2459","Sol. WB_Global solar atlas. https://globalsolaratlas.info/map?c&amp;#61;19.248922,-97.171326,9&amp;amp;s&amp;#61;19.519781,-96.911168&amp;amp;m&amp;#61;site ","EvapotraspiraciónEn terminos de germinación y cobertura","NOTAS GENERALESJuntaremos playa y duna como un solo ecosistema. Sugerencia de Rodolfo","Plataforma continental. GEBCO. Gridded Bathymetry data download.https://download.gebco.net","Infraestructura","Otros HumedalesSIMARPaty Moreno","Estructuras marinas","Influencia antrópica","ALTERACIONES ANTROPICAS DE LA Calidad del agua","Pendiente de la playaInformación puntualMónica y otros","Diámetro mediano D50(base de datos GICP-IIUNAM)","Redondez sedimento. (base de datos GICP-IIUNAM)","Dirección de la línea de costa con relación al oleaje y al vientoUsar línea de costa propuesta por  Rodolfo","Efecto del sargazo","Corrientes MarinasAtlas de corrientes IMTA de Efraín Mateos (Base de datos del CEMIE)VALERIA","Especies invasorasUsar datos procesados por Julián","Perfil de sueloPerfiles edafológicos se pueden encontrar en:https://www.inegi.org.mx/app/biblioteca/ficha.html?upc&amp;#61;702825266707Suelos sueltos y poco compactados son más susceptibles a la erosión eólica, lo que facilita la formación de dunas. Por otro lado, suelos más compactos pueden resistir mejor la acción del viento. La presencia de diferentes horizontes en el perfil edafológico puede afectar la disponibilidad de sedimentos para la formación de dunas. Un horizonte superficial arenoso es ideal para la movilización de partículas.","Macroalgashttps://fjps.springeropen.com/articles/10.1186/s43094-020-00147-6","Estacionalidad fuente: copernicus. posprocesar para ver también temporada de secas VALERIA - Marisa proporciona el criterio","Condición","Precipitación- fuente: copernicus. posprocesar para ver también temporada de secas VALERIA","GastoEscurrimiento en cuencaAporte de sedimento terrígeno","dirección de la ola (datos horarios 1940-2022)https://confluence.ecmwf.int/display/CKB/ERA5%3A&amp;#43;data&amp;#43;documentation","velocidad del viento (datos horarios 1940-2022)https://confluence.ecmwf.int/display/CKB/ERA5%3A&amp;#43;data&amp;#43;documentationEventos de vientos extremos. Encontrar umbrales de viento y ver si favorecen la construcción o la destrucción de duna. ¿Velocidad de inicio de arrastre?WB_Atlas eólico mundial: https://globalwindatlas.info/es/PENDIENTE DEFINIR UMBRALES","dirección del viento (datos horarios 1940-2022)https://confluence.ecmwf.int/display/CKB/ERA5%3A&amp;#43;data&amp;#43;documentation","Detección","Contexto","Otro","Intervención hunama","HumedadEn terminos de germinación y cobertura","Checar pagina de idea del instituto de geografíahttps://www.gits.igg.unam.mx/idea/descargaGaby Gómez"],["pot_ola","mareas","habito","ancho_playa","geologia","coral","pastos","aguas_disp","flujo_subterraneo","radiacion","evapotranspiracion","notas_1","plataforma_cont","infraestruct","otros_hum","estruct_marina","influ_antro","alt_antro","pendiente","d50","redondez","dir_costa","EfectoDelSargaso","corrientes_m","invasoras","perfilsuelo","macroalgas","secas","condicion","lluvia_anual","gasto","dir_ola","vel_viento","dir_viento","inf_2","inf_1","inf_4","inf_3","humedad","notas_2"],["blue","blue","blue","blue","blue","dark_green","dark_green","blue","blue","blue","dark_green","gray","blue","orange","blue","orange","orange","orange","blue","blue","blue","blue","violet","blue","violet","blue","dark_green","blue","green","blue","blue","blue","blue","blue","dark_green","blue","violet","orange","dark_green","gray"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>text<\/th>\n      <th>var<\/th>\n      <th>color<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"text","targets":1},{"name":"var","targets":2},{"name":"color","targets":3}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 </div>
-</div>
-<p><br>
-</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<ol start="3" type="1">
-<li>Cada nodo deberá tener una <em>etiqueta vinculada</em>, que especifique el nombre de la variable que lo representará en forma única. Deberá coincidir con la forma como se etiquetan los datos respectivos en la base de datos de que se disponga para el análisis. Se recomienda usar nombres cortos, alrededor de 10 caracteres alfanuméricos (ASCII para <em>Netica</em>), sin marcas diacríticas o símbolos, ni espacios. Como separador usar guión bajo.</li>
-</ol>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="imagenes/Miro_nota_etiquetada-rasgado_lápiz.png" class="img-fluid"></p>
-</div>
-</div>
-</div>
-<ol start="4" type="1">
-<li><p>En el enfoque causal que estamos proponiendo, las propiedades del <em>DAG</em> son importantes. El modelo bayesiano representa una propuesta del <em>proceso generador de la distribución de probabilidades conjunta del sistema</em>. Esto es importante, no sólo como una propiedad matemática del modelo, sino porque el <em>DAG</em> describe patrones específicos de correlación e independencia condicional que deben existir entre todos los factores involucrados, asumiendo que es válido el <em>DAG</em> propuesto. Además, en el diseño de políticas públicas interesa influir sobre el comportamiento del sistema. En todos los casos esto permite considerar los patrones específicos de independencia condicional que emergen, por implicación, de la estructura causal del sistema y que determinarán las consecuencias esperadas de las intervenciones planeadas.</p></li>
-<li><p>Con toda la información reunida en <em>Miro</em> es posible transferir la estructura de la red a <em>Netica</em>. No será una red completamente funcional, sólo incluirá los nodos con los nombres y vínculos acordados y registrados en <em>Miro</em>. Con base en esta información se tiene lo necesario para construir la red en la forma que convenga a varias plataformas de análisis: <a href="https://www.bnlearn.com/">bnlearn en <em>R</em></a> o <a href="https://causalnex.readthedocs.io/en/latest/index.html">causalnex</a>, <a href="https://pomegranate.readthedocs.io/en/latest/">pomegranate</a>, <a href="https://pgmpy.org/">pgmpy</a> en Python.</p></li>
-</ol>
 
 
-</section>
 </section>
 </section>
 

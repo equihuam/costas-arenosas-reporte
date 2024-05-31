@@ -54,13 +54,13 @@ Por ejemplo, veamos como recuperar los datos de acceso a un tablero particular s
 El resultado que regresa *Miro* es un `json` así que utilizaré la biblioteca `jsonlite`para convertirlo a un `dataframe`.
 
 ```{r Miro_usuario, echo=TRUE, message=FALSE, warning=FALSE}
-library(devtools)
-install_github("equihuam/miro2bayesNet", force = TRUE)
+#library(devtools)
+#install_github("equihuam/miro2bayesNet", force = TRUE)
 
 library(miro2bayes)
 library(bnlearn)
 library(bnviewer)
-library(tidyverse)
+library(tidyverse, quietly = TRUE, warn.conflicts = FALSE)
 
 tableros <- miroBoards(servMiro = "miro", user = "miguel-edu-token")
 tableros[, c("name", "id")]
@@ -74,9 +74,9 @@ datos_miro <- getMiro(servMiro = "miro", user = "miguel-edu-token",
 
 miroValidation(datos_miro)
 
-neticaMiro <- miro2DNE(datos_miro)
+#neticaMiro <- miro2DNE(datos_miro)
 
-write(neticaMiro, "costa-arenosa.dne")
+#write(neticaMiro, "costa-arenosa.dne")
 
 netMiro_bn <- miro2bnlearn(datos_miro)
 netMiro_bn
@@ -87,28 +87,18 @@ graphviz.plot(netMiro_bn, layout = "dot")
 
 ```
 
-## Resumen
+La lista de variables identificadas es:
 
-### Conceptos y recomendaciones
+```{r}
+#| label: lista_vars
+#| echo: false
 
-Se demuestra la interacción con un [Tablero Miro](https://miro.com/app/board/uXjVMGRTvaE=/) desde **R** para generar una red bayesiana en forma colaborativa. Para facilitar el procedimiento se convino usar la siguiente rutina de integración del tablero:
 
-1.  Una *Red Bayesiana* siempre es un **DAG** (grafo acíclico dirigido), consta de **nodos** (las notas adhesivas) y **arcos** los conectores que indican la existencia (a veces sólo la sospecha) de interacción causal entre variables. Estos arcos tienen una orientación, de ahí que los representemos por flechas con la *causa en la cola* y en *el efecto en la punta* (normalmente el resultado esperado, *la casa antecede al efecto*). Hay que asegurar en *Miro* que el contacto de cada conector con los dos nodos que vincula quede establecida. Miro sugiere contacto válido *destacando en gris* el nodo que toca la flecha. Una vez hecho el contacto, la flecha puede ubicarse en cualquier posición sobre el borde gris que aparece en torno al papelito. Puede ser que haya arcos que no quedaron adecuadamente ligados a sus *papelitos* de inicio o final. Esto es una inconsistencia técnica para los fine de extracción de datos.
+library(DT)
+datos_miro$nodes %>% 
+  select(text, var, color) %>% 
+  datatable() %>% 
+  formatStyle(columns = colnames(.), fontSize = '10px')
 
-::: {layout-ncol="2"}
-2.  Cada Nodo deberá ser representado por una sola *Nota adhesiva* ("sticky note"). En este papelito se puede acomodar el texto descriptivo que se desee, pero conviene definir operacionalmente la variable y especificar la escala de medición y posible patrón de discretización o conjunto de niveles que puede tomar.
+```
 
-![](imagenes/Miro_sticky_note_marcada.png)
-:::
-
-\
-
-::: {layout-ncol="2"}
-3.  Cada nodo deberá tener una *etiqueta vinculada*, que especifique el nombre de la variable que lo representará en forma única. Deberá coincidir con la forma como se etiquetan los datos respectivos en la base de datos de que se disponga para el análisis. Se recomienda usar nombres cortos, alrededor de 10 caracteres alfanuméricos (ASCII para *Netica*), sin marcas diacríticas o símbolos, ni espacios. Como separador usar guión bajo.
-
-![](imagenes/Miro_nota_etiquetada-rasgado_l%C3%A1piz.png)
-:::
-
-4.  En el enfoque causal que estamos proponiendo, las propiedades del *DAG* son importantes. El modelo bayesiano representa una propuesta del *proceso generador de la distribución de probabilidades conjunta del sistema*. Esto es importante, no sólo como una propiedad matemática del modelo, sino porque el *DAG* describe patrones específicos de correlación e independencia condicional que deben existir entre todos los factores involucrados, asumiendo que es válido el *DAG* propuesto. Además, en el diseño de políticas públicas interesa influir sobre el comportamiento del sistema. En todos los casos esto permite considerar los patrones específicos de independencia condicional que emergen, por implicación, de la estructura causal del sistema y que determinarán las consecuencias esperadas de las intervenciones planeadas.
-
-5.  Con toda la información reunida en *Miro* es posible transferir la estructura de la red a *Netica*. No será una red completamente funcional, sólo incluirá los nodos con los nombres y vínculos acordados y registrados en *Miro*. Con base en esta información se tiene lo necesario para construir la red en la forma que convenga a varias plataformas de análisis: [bnlearn en *R*](https://www.bnlearn.com/) o [causalnex](https://causalnex.readthedocs.io/en/latest/index.html), [pomegranate](https://pomegranate.readthedocs.io/en/latest/), [pgmpy](https://pgmpy.org/) en Python.
