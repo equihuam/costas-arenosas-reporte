@@ -99,7 +99,11 @@ La lista de variables identificadas es:
 library(DT)
 datos_miro$nodes %>% 
   select(text, var, color) %>% 
-  datatable() %>% 
-  formatStyle(columns = colnames("."), fontSize = "8px")
+  datatable(rownames = FALSE, width = "90%",
+            options = list(
+              headerCallback = DT::JS(
+                "function(thead) {",
+                "  $(thead).css('font-size', '70%');", "}"))) %>% 
+  formatStyle(columns = 1:3, fontSize = "70%")
 
 ```
