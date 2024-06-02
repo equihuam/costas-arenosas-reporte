@@ -1,0 +1,3 @@
+# Introducción
+
+El proyecto **Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina** se propone generar estimaciones de la condición en la que se encuentran los ecosistemas costeros, especialmente los arenosos, del país con una representación raster y resolución geográfica de pixeles de 3 segundos (aproximadamente 100 m). También se está considerando tener una valoración de mayor resolución para la zona costera de Quintana Roo, en donde se propone lograr una resolución geográfica con pixeles 0.3 segundos.

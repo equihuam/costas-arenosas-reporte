@@ -2,41 +2,45 @@ project:
   type: book
 
 book:
-  title: "Prueba-oct"
+  title: "Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina"
+  subtitle: "Proyecto Conahcyt de ciencia de frontera"
+
   sidebar: 
-    background: "#B5C9B8"
-    logo: beach-7318494_1920.jpg
-    search: true
-  
+      background: "#B5C9B8"
+      logo: images/beach-7318494_1920.jpg
+      search: true
+    
   page-footer:
-    left: |
-      Reporte Costas Arenosas.
-    right: |
-      Reporte editado con <a href="https://quarto.org/">Quarto</a>.
-  cover-image: sunrise-5367028_1280.jpg
+      left: |
+        Reporte Costas Arenosas.
+      right: |
+        Reporte preparado con <a href="https://quarto.org/">Quarto</a>.
+  cover-image: images/landscape-546343_1280.jpg
   author:
-  - name: Octavio Pérez-Maqueo 
-    url: https://inecol.mx/
-    affiliation: Ambiente y Sustentabilidad / Inecol
-    affiliation-url: https://inecol.mx
-  - name: Miguel Equihua 
-    url: https://inecol.mx/
-    affiliation: Ambiente y Sustentabilidad / Inecol
-    affiliation-url: https://inecol.mx
+    - name: Octavio Pérez-Maqueo 
+      url: https://inecol.mx/
+      affiliation: Ambiente y Sustentabilidad / Inecol
+      affiliation-url: https://inecol.mx
+    - name: Miguel Equihua 
+      url: https://inecol.mx/
+      affiliation: Ambiente y Sustentabilidad / Inecol
+      affiliation-url: https://inecol.mx
   date: "2024/5/23"
   chapters:
     - index.qmd
-    - intro.qmd
-    - miro-costas.qmd
-    - cap1/Chapter-1.qmd
-    - summary.qmd
-    - references.qmd
+    - capitulos/summary.qmd
+    - capitulos/intro.qmd
+    - capitulos/miro-costas.qmd
+    - capitulos/cap1/Chapter-1.qmd
+    - capitulos/references.qmd
 
 bibliography: references.bib
 csl: apa.csl
 
 citation: 
   type: book
+
+lang: es
   
 format:
   html:
