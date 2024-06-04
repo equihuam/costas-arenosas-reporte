@@ -10,6 +10,29 @@ editor_options:
 
 [Characterization of Surface Evidence of Groundwater Flow Systems](https://www.mdpi.com/2073-4441/12/9/2459)
 
+## Agenda
+
+```{r}
+library(officer)
+library(stringr)
+
+setwd("C:/Users/equih/1 Nubes/OneDrive/Costas-arenosas/prueba-oct/capitulos")
+
+texto <- read_docx("Agenda Taller.docx")
+texto <- docx_summary(texto)$text
+
+actividades <- as.data.frame(texto[7:51])
+```
+
+La reunión de inició del proyecto: *`r texto[1]`*, se realizó del `r str_remove(texto[5], "Fechas: ")`.
+
+```{r}
+library(DT)
+
+actividades %>% datatable()
+```
+
+
 ## Miro
 
 ### Construcción colaborativa de Redes Bayesianas
