@@ -35,7 +35,7 @@ book:
     - capitulos/references.qmd
     - capitulos/taller.qmd
 
-bibliography: references.bib
+bibliography: capitulos/references.bib
 csl: apa.csl
 
 citation: 

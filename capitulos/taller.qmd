@@ -1,5 +1,8 @@
 ---
 
+bibliography: references.bib
 ---
 
 # Taller
+
+[@Harper2002]
