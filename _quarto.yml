@@ -33,8 +33,9 @@ book:
     - capitulos/miro-costas.qmd
     - capitulos/cap1/Chapter-1.qmd
     - capitulos/references.qmd
+    - capitulos/taller.qmd
 
-bibliography: references.bib
+bibliography: capitulos/references.bib
 csl: apa.csl
 
 citation: 
@@ -47,6 +48,8 @@ format:
     theme: materia
   pdf:
     documentclass: scrreprt
+    prefer-html: true
 
-
+execute: 
+  freeze: true
 
