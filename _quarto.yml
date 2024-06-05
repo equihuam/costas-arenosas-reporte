@@ -47,6 +47,7 @@ format:
     theme: materia
   pdf:
     documentclass: scrreprt
+    prefer-html: true
 
 execute: 
   freeze: true

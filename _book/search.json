@@ -1,0 +1,62 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina",
+    "section": "",
+    "text": "Preface\nEste es el documento de registro de avances del proyecto Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "capitulos/summary.html",
+    "href": "capitulos/summary.html",
+    "title": "1  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/intro.html",
+    "href": "capitulos/intro.html",
+    "title": "2  Introducción",
+    "section": "",
+    "text": "El proyecto Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina se propone generar estimaciones de la condición en la que se encuentran los ecosistemas costeros, especialmente los arenosos, del país con una representación raster y resolución geográfica de pixeles de 3 segundos (aproximadamente 100 m). También se está considerando tener una valoración de mayor resolución para la zona costera de Quintana Roo, en donde se propone lograr una resolución geográfica con pixeles 0.3 segundos.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/miro-costas.html",
+    "href": "capitulos/miro-costas.html",
+    "title": "3  Datos",
+    "section": "",
+    "text": "3.1 Agenda\nLa reunión de inició del proyecto: “Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina (CF-2023-G-1497)”, se realizó del Miércoles 29 al viernes 31 de mayo de 2024.\nlibrary(DT)\n\nactividades %&gt;% datatable()",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Datos</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/miro-costas.html#miro",
+    "href": "capitulos/miro-costas.html#miro",
+    "title": "3  Datos",
+    "section": "3.2 Miro",
+    "text": "3.2 Miro\n\n3.2.1 Construcción colaborativa de Redes Bayesianas\n\n\n\n\n\n\nLa propuesta que hacemos es usar Miro como plataforma de debate y construcción de consenso. Buscamos así aproximarnos a la estructura causal que vincula las variables que determinan el rendimiento y la sustentabilidad (social, económica y ambiental). Una vez resuelta esta etapa, es necesario transferir lo acordado en Miro a plataformas de análisis estadístico. Aquí, nos propusimos trasladar los resultados de Miro a R. Al hacer esto las posibilidades analíticas se potencian muy ampliamente. Como veremos, podemos recurrir a dagitty o incluso utilizar Python y Netica. Para hacer esto optamos por la ruta de acceso commputacional a través de la interfase “REST”. Esto implica usar la biblioteca httr en R.\n\n\n\n\n\n\nHemos preparado una biblioteca con las rutinas que se describen aquí, para que las puedan usar según se requiera. Para descargarlas usa el botón que sigue.\n\n\n\n\n\n Descarga la biblioteca miro2bayes\n\n\n\n\n\n\n\n3.2.2 Acceder a Miro\nEn preparación para interactuar con Miro se requiere tener permisos de acceso de acuerdo con las especificaciones que se dan aquí. Estas credenciales hay que evitar distribuirlas. Por consiguiente, para hacerlo hemos recurrido a la biblioteca keyring para mantenerlas confidenciales. Esta biblioteca permite utilizar el sistema de seguridad del equipo para la gestión de las claves. Para dar de alta una llave utilicé en este caso la instrucción siguiente, necesitarás dos identificadores de tu preferencia que deberán ir entrecomillados:\nkey_set(service = \"[referencia de tu preferencia]\", username = \"[identificador de tu gusto]\")\nUna vez registrada en el equipo la llave, queda lista para su uso en cualquier momento en esa máquina .\n\nif (!require(miro2bayes))\n{\n  library(devtools)\n  install_github(\"equihuam/miro2bayesNet\", force = TRUE)\n}\n\nlibrary(miro2bayes)\nlibrary(bnlearn)\nlibrary(bnviewer)\nlibrary(tidyverse, quietly = TRUE, warn.conflicts = FALSE)\n\ntableros &lt;- miroBoards(servMiro = \"miro\", user = \"miguel-edu-token\")\ntableros[, c(\"name\", \"id\")]\n\n                                name           id\n1                      Costa arenosa uXjVKB6PRSY=\n2              Education Plan Basics uXjVPZCsPDE=\n3 Education Plan Apps & Integrations uXjVPZCsPUo=\n4      Education Plan Administration uXjVPZCsPVc=\n5    Education Plan Useful Resources uXjVPZCsPVQ=\n\ntablero_tr &lt;- tableros %&gt;%\n              filter(str_detect(name, \"Costa\")) %&gt;%\n              select(id, name)\n\ndatos_miro &lt;- getMiro(servMiro = \"miro\", user = \"miguel-edu-token\",\n                        board = tablero_tr)\n\nmiroValidation(datos_miro)\n\nMiro board origin:      Costa arenosa\nIs it a TRUE DAG?:      Graph is acyclic\nNumber of sticky notes: 46\nNodes without var:      4\nNumber of linked nodes: 15\nDuplicated nodes:       0\nNumber of arcs:         13\nWell connected arcs:    13\nNumb. Loose arcs:       0\nDuplicated arcs:        0\n\n#neticaMiro &lt;- miro2DNE(datos_miro)\n\n#write(neticaMiro, \"costa-arenosa.dne\")\n\nnetMiro_bn &lt;- miro2bnlearn(datos_miro)\nnetMiro_bn\n\n\n  Random/Generated Bayesian network\n\n  model:\n   [redondez][vel_viento][dir_viento][pot_ola][dir_ola][d50][lluvia_anual]\n   [secas][mareas][dir_costa][radiacion][flujo_subterraneo][corrientes_m]\n   [erosibilidad|redondez:vel_viento:dir_viento:pot_ola:dir_ola:d50:lluvia_anual:secas:mareas:dir_costa:radiacion:corrientes_m]\n   [aguas_disp|flujo_subterraneo]\n  nodes:                                 15 \n  arcs:                                  13 \n    undirected arcs:                     0 \n    directed arcs:                       13 \n  average markov blanket size:           10.53 \n  average neighbourhood size:            1.73 \n  average branching factor:              0.87 \n\n  generation algorithm:                  Empty \n\nvariables &lt;- tibble(var = datos_miro$nodes$var)\n\n\n#graphviz.plot(netMiro_bn, layout = \"dot\")\n\nLa lista de variables identificadas es:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Datos</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/cap1/Chapter-1.html",
+    "href": "capitulos/cap1/Chapter-1.html",
+    "title": "4  Chapter 2",
+    "section": "",
+    "text": "Something very interesting.\nTabla ejemplo\n\n\n\n\n\n\n \n\n\n\n\n\nTabla 4.1: My Caption\n\n\n\n\n\nCol1\nAsunto\n\n\n\n\nContenido\n1\n\n\nEjemplo\n3\n\n\nFin\n4\n\n\n\n\n\n\n\n\n \n\n\n\nSee Tabla 4.1.\n\n\n\nCaption",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Chapter 2</span>"
+    ]
+  }
+]
