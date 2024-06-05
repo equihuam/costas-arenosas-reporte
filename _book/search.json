@@ -24,8 +24,16 @@
     "objectID": "capitulos/miro-costas.html#agenda",
     "href": "capitulos/miro-costas.html#agenda",
     "title": "3  Datos",
+<<<<<<< HEAD
     "section": "3.1 Agenda",
     "text": "3.1 Agenda\nLa reunión de inició del proyecto: “Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina (CF-2023-G-1497)”, se realizó del Miércoles 29 al viernes 31 de mayo de 2024.\n\nlibrary(DT)\n\nactividades %&gt;% datatable()"
+=======
+    "section": "",
+    "text": "3.1 Agenda\nLa reunión de inició del proyecto: “Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina (CF-2023-G-1497)”, se realizó del Miércoles 29 al viernes 31 de mayo de 2024.\nConceptoDía 1 Miércoles 29 de mayo10:00-10:20 Inicio Bienvenida, presentación del taller y presentación de asistentes 10:20-11:20 ¿Por qué creemos que es necesario un proyecto como este?Visión integral Caso particular de las costasDesarrollo de habilidades ¿Cómo sugerimos hacerlo? Co-construcciónCiencia Abierta y principios FAIR Análisis con base en propuesta del SEEA EAFlujos de trabajo (pipelines)11:20-12:20 Descripción y avances del proyectoGeneralidadesMarco conceptualCompromisos para las tres etapasAvances 12:20-12:40 Descanso12:40-14:00 El Sistema de Contabilidad de Ecosistemas.Activos ecosistémicosCuentas de extensión, condición y servicios ecosistémicosCuenta de condiciónModelo de integridad ecosistémica14:00-15:00 Comida15:00-17:00 Estrategia metodológicaDe lo conceptual a lo analítico (de Miro a Nética)Enfoque causal y probabilísticoDocumentación y gestión de datosDía 2 jueves 30 de mayo10:00 -14:00 Gestión de datos y Modelación ParticipativaVariables existentes y nuevas variablesSugerencias para documentar y gestionar datos.Ejercicio de modelación participativa14:00-15:00 Comida y foto grupal15:00-17:00 Acuerdos y siguientes pasosDía 3 viernes 31 de mayo10:00 -12:20 Evaluación integral en las costas de Quintana Roo12:20 -14:00 Acuerdos y siguientes pasos                            14:00  Fin del taller",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Datos</span>"
+    ]
+>>>>>>> a8dd0b8ce038ee15efab97a603f428f173c47e7f
   },
   {
     "objectID": "capitulos/miro-costas.html#miro",
