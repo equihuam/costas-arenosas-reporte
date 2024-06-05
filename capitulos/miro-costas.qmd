@@ -16,7 +16,7 @@ editor_options:
 library(officer)
 library(stringr)
 
-setwd("C:/Users/equih/1 Nubes/OneDrive/Costas-arenosas/prueba-oct/capitulos")
+#setwd("C:/Users/equih/1 Nubes/OneDrive/Costas-arenosas/prueba-oct/capitulos")
 
 texto <- read_docx("Agenda Taller.docx")
 texto <- docx_summary(texto)$text

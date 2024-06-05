@@ -48,5 +48,6 @@ format:
   pdf:
     documentclass: scrreprt
 
-
+execute: 
+  freeze: true
 
