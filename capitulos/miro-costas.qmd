@@ -14,10 +14,15 @@ library(officer)
 library(stringr)
 library(dplyr, warn.conflicts = FALSE)
 
-texto <- read_docx("Agenda Taller.docx")
+agenda <- list.files(".", pattern = "docx", full.names = TRUE, recursive = TRUE)
+
+texto <- read_docx(agenda)
 texto <- docx_summary(texto)$text
 
-actividades <- as.data.frame(texto[7:51])
+actividades <- as.data.frame(texto[7:length(texto)])
+actividades <- actividades[actividades != ""]
+actividades <- actividades[str_detect(actividades, " {5,}", negate = TRUE)]
+
 ```
 
 
@@ -31,14 +36,28 @@ La reunión de inició del proyecto: *`r texto[1]`*, se realizó del `r str_remo
 
 library(flextable)
 
-plan <- tibble(tema = character(), sub_tema = character())
-for(a in actividades[,1])
-  if(str_detect(a, "^\\d+:\\d+"))
-    rbind(tema = a, subtema = "")
+plan <- tibble(tema = character(), subtema = character())
+for(a in actividades)
+  if(str_detect(a, "^\\d+:\\d+|Día"))
+    {
+      tema_a <- a
+      plan <- bind_rows(plan, c(tema = a, subtema = ""))
+    } else {
+      plan <- bind_rows(plan, c(tema = tema_a, subtema = str_split(a, ", | y ")))
+    }
 
-actividades %>% rename(Concepto=1) %>% 
-  flextable() %>% 
-  width(1, 150, unit = "mm")
+plan_txt <- ""
+for (p in (1:length(plan$subtema)))
+{
+  if (plan$subtema[p] == "")
+  {
+    plan_txt <- paste0(plan_txt, plan$tema[p], "\n")
+  } else {
+    plan_txt <- paste0(plan_txt, "      ", plan$subtema[p], "\n")
+  }
+}
+
+cat(plan_txt)
 ```
 
 :::
