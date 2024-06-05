@@ -38,7 +38,8 @@ actividades %>% datatable()
 ### Construcción colaborativa de Redes Bayesianas
 
 ::: {layout-ncol="2"}
-La propuesta que hacemos es usar *Miro* como plataforma de debate y construcción de concenso. Buscamos así aproximarnos a la estructura causal que vincula las variables que determinan el rendimiento y la sustentabilidad (social, económica y ambiental). Una vez resuelta esta etapa, es necesario transferir lo acordado en *Miro* a plataformas de análisis estadístico. Aquí, nos propusimos trasladar los resultados de *Miro* a *R*. Al hacer esto las posibilidades analíticas se potencian muy ampliamente. Como veremos, podemos recurrir a `dagitty` o incluso utilizar *Python* y *Netica*. Para hacer esto optamos por la ruta de acceso commputacional [a través de la interfase "REST"](https://developers.miro.com/reference). Esto implica usar la biblioteca `httr` en *R*.
+La propuesta que hacemos es usar *Miro* como plataforma de debate y construcción de consenso. 
+Buscamos así aproximarnos a la estructura causal que vincula las variables que determinan el rendimiento y la sustentabilidad (social, económica y ambiental). Una vez resuelta esta etapa, es necesario transferir lo acordado en *Miro* a plataformas de análisis estadístico. Aquí, nos propusimos trasladar los resultados de *Miro* a *R*. Al hacer esto las posibilidades analíticas se potencian muy ampliamente. Como veremos, podemos recurrir a `dagitty` o incluso utilizar *Python* y *Netica*. Para hacer esto optamos por la ruta de acceso commputacional [a través de la interfase "REST"](https://developers.miro.com/reference). Esto implica usar la biblioteca `httr` en *R*.
 
 ![](Images/colaboración.png)
 :::
