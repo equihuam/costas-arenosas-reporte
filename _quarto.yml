@@ -1,6 +1,14 @@
 project:
   type: book
 
+lang: es
+  
+bibliography: capitulos/references.bib
+csl: apa.csl
+
+citation: 
+  type: book
+
 book:
   title: "Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina"
   subtitle: "Proyecto Conahcyt de ciencia de frontera (CF-2023-G-1497)"
@@ -35,14 +43,6 @@ book:
     - capitulos/references.qmd
     - capitulos/taller.qmd
 
-bibliography: capitulos/references.bib
-csl: apa.csl
-
-citation: 
-  type: book
-
-lang: es
-  
 format:
   html:
     theme: materia
