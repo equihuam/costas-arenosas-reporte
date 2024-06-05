@@ -26,10 +26,15 @@ La reunión de inició del proyecto: *`r texto[1]`*, se realizó del `r str_remo
 ::: {.content-hidden when-format="pdf"}
 
 ```{r}
-#| label: actividades
+#| label: lista_actividades
 #| echo: false
 
 library(flextable)
+
+plan <- tibble(tema = character(), sub_tema = character())
+for(a in actividades[,1])
+  if(str_detect(a, "^\\d+:\\d+"))
+    rbind(tema = a, subtema = "")
 
 actividades %>% rename(Concepto=1) %>% 
   flextable() %>% 
