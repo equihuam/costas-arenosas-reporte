@@ -1,9 +1,3 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
-
 # Datos
 
 ![](images/fisiografía.png)
@@ -13,6 +7,9 @@ editor_options:
 ## Agenda
 
 ```{r}
+#| label: inicio
+#| echo: false
+
 library(officer)
 library(stringr)
 
@@ -24,21 +21,27 @@ texto <- docx_summary(texto)$text
 actividades <- as.data.frame(texto[7:51])
 ```
 
+
+::: {.content-hidden when-format="pdf"}
+
 La reunión de inició del proyecto: *`r texto[1]`*, se realizó del `r str_remove(texto[5], "Fechas: ")`.
 
 ```{r}
+#| label: actividades
+
 library(DT)
 
 actividades %>% datatable()
 ```
 
-
+:::
 ## Miro
 
 ### Construcción colaborativa de Redes Bayesianas
 
 ::: {layout-ncol="2"}
-La propuesta que hacemos es usar *Miro* como plataforma de debate y construcción de concenso. Buscamos así aproximarnos a la estructura causal que vincula las variables que determinan el rendimiento y la sustentabilidad (social, económica y ambiental). Una vez resuelta esta etapa, es necesario transferir lo acordado en *Miro* a plataformas de análisis estadístico. Aquí, nos propusimos trasladar los resultados de *Miro* a *R*. Al hacer esto las posibilidades analíticas se potencian muy ampliamente. Como veremos, podemos recurrir a `dagitty` o incluso utilizar *Python* y *Netica*. Para hacer esto optamos por la ruta de acceso commputacional [a través de la interfase "REST"](https://developers.miro.com/reference). Esto implica usar la biblioteca `httr` en *R*.
+La propuesta que hacemos es usar *Miro* como plataforma de debate y construcción de consenso. 
+Buscamos así aproximarnos a la estructura causal que vincula las variables que determinan el rendimiento y la sustentabilidad (social, económica y ambiental). Una vez resuelta esta etapa, es necesario transferir lo acordado en *Miro* a plataformas de análisis estadístico. Aquí, nos propusimos trasladar los resultados de *Miro* a *R*. Al hacer esto las posibilidades analíticas se potencian muy ampliamente. Como veremos, podemos recurrir a `dagitty` o incluso utilizar *Python* y *Netica*. Para hacer esto optamos por la ruta de acceso commputacional [a través de la interfase "REST"](https://developers.miro.com/reference). Esto implica usar la biblioteca `httr` en *R*.
 
 ![](Images/colaboración.png)
 :::
@@ -47,7 +50,14 @@ Hemos preparado una biblioteca con las rutinas que se describen aquí, para que 
 
 \
 
-```{r biblio_miro2Bayes, echo=FALSE, message=FALSE, warning=FALSE, include=TRUE}
+::: {.content-hidden when-format="pdf"}
+
+```{r}
+#| label: biblio_miro2Bayes
+#| echo: false
+#| message: false
+#| warning: false
+#| include: true
 
 downloadthis::download_link(
       link = "https://github.com/equihuam/miro2bayesNet",
@@ -58,6 +68,8 @@ downloadthis::download_link(
       self_contained = FALSE)
 
 ```
+
+:::
 
 \
 
@@ -108,9 +120,17 @@ netMiro_bn
 
 variables <- tibble(var = datos_miro$nodes$var)
 
-graphviz.plot(netMiro_bn, layout = "dot")
+```
+
+
+
+::: {.content-hidden when-format="pdf"}
+
+```{r}
+#graphviz.plot(netMiro_bn, layout = "dot")
 
 ```
+
 
 La lista de variables identificadas es:
 
@@ -130,3 +150,5 @@ datos_miro$nodes %>%
   formatStyle(columns = 1:3, fontSize = "70%")
 
 ```
+
+:::
