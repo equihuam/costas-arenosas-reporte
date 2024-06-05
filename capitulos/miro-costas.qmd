@@ -12,8 +12,7 @@
 
 library(officer)
 library(stringr)
-
-#setwd("C:/Users/equih/1 Nubes/OneDrive/Costas-arenosas/prueba-oct/capitulos")
+library(dplyr, warn.conflicts = FALSE)
 
 texto <- read_docx("Agenda Taller.docx")
 texto <- docx_summary(texto)$text
@@ -22,19 +21,23 @@ actividades <- as.data.frame(texto[7:51])
 ```
 
 
-::: {.content-hidden when-format="pdf"}
-
 La reunión de inició del proyecto: *`r texto[1]`*, se realizó del `r str_remove(texto[5], "Fechas: ")`.
+
+::: {.content-hidden when-format="pdf"}
 
 ```{r}
 #| label: actividades
+#| echo: false
 
-library(DT)
+library(flextable)
 
-actividades %>% datatable()
+actividades %>% rename(Concepto=1) %>% 
+  flextable() %>% 
+  width(1, 150, unit = "mm")
 ```
 
 :::
+
 ## Miro
 
 ### Construcción colaborativa de Redes Bayesianas
