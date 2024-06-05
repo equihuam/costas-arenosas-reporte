@@ -33,6 +33,7 @@ book:
     - capitulos/miro-costas.qmd
     - capitulos/cap1/Chapter-1.qmd
     - capitulos/references.qmd
+    - capitulos/taller.qmd
 
 bibliography: references.bib
 csl: apa.csl
