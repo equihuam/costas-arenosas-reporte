@@ -1,7 +1,6 @@
 ---
 comments:
   hypothesis: true
-  
 ---
 # Datos
 
@@ -23,15 +22,27 @@ agenda <- list.files(".", pattern = "docx", full.names = TRUE, recursive = TRUE)
 
 texto <- read_docx(agenda)
 texto <- docx_summary(texto)$text
+num_proy <- str_extract(texto[1], "(?<= \\()(.*?)(?=\\))")
+tit_proy <- str_extract(texto[1], "(?<=“)(.*?)(?= \\()")
 
 actividades <- as.data.frame(texto[7:length(texto)])
 actividades <- actividades[actividades != ""]
 actividades <- actividades[str_detect(actividades, " {5,}", negate = TRUE)]
 
+
 ```
 
 
-La reunión de inició del proyecto: *`r texto[1]`*, se realizó del `r str_remove(texto[5], "Fechas: ")`.
+La reunión de inició del proyecto (**`r num_proy`**): 
+
+::: {layout="[-1,10,-1]"}
+
+*`r tit_proy`* 
+
+:::
+
+Se realizó del `r str_to_lower(str_remove(texto[5], "Fechas: "))`.
+
 
 ```{r}
 #| label: lista_actividades
@@ -57,13 +68,13 @@ for (p in (1:length(plan$subtema)))
   {
     if (str_detect(plan$tema[p], "Día"))
         {
-          plan_txt <- paste0(plan_txt, "\n### ", plan$tema[p], "\n\n")
+          plan_txt <- str_to_sentence(paste0(plan_txt, "\n### ", plan$tema[p], "\n\n"))
           
     } else {
-          plan_txt <- paste0(plan_txt, "\n**", plan$tema[p], "**", "\n\n")
+          plan_txt <- paste0(plan_txt, "\n+ **", plan$tema[p], "**", "\n\n")
     }
   } else {
-    plan_txt <- paste0(plan_txt, "+ ", str_to_sentence(plan$subtema[p]), "\n")
+    plan_txt <- paste0(plan_txt, "  + ", str_to_sentence(plan$subtema[p]), "\n")
   }
 }
 
