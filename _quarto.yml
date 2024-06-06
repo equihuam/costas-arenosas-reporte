@@ -12,6 +12,9 @@ citation:
 book:
   title: "Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina"
   subtitle: "Proyecto Conahcyt de ciencia de frontera (CF-2023-G-1497)"
+  
+  downloads: [pdf, epub]
+  favicon: images/plecas_Página_7.png
 
   sidebar: 
       background: "#B5C9B8"

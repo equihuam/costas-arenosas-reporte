@@ -79,7 +79,7 @@ Buscamos así aproximarnos a la estructura causal que vincula las variables que 
 
 Hemos preparado una biblioteca con las rutinas necesarias para transferir lo trabajado en **Miro** (básicamente desarrollo conceptual) a **R**  en donde se podrá  continuar con el desarrollo formal del modelo según se requiera, cualitativa y cuantitativamente. Para instalarla y usarla hay que seguir las [indicaciones que se describen aquí](https://github.com/equihuam/miro2bayesNet). Consideren que para usarla habrá que hacer algunas preparaciones para interactuar con **Miro**. Se trata básicamente de tener los permisos de acceso. Habrá que obtener credenciales en la forma de un *token*, el cual hay que evitar distribuir. Por lo tanto, para operar hemos recurrido a la biblioteca `keyring` para mantenerlas confidenciales. Esta biblioteca permite utilizar el sistema de seguridad del equipo para la gestión de las claves. Para dar de alta una llave utiliza la instrucción de registro `key_set`, necesitarás dos identificadores de tu preferencia que deberán ir entrecomillados:
 
-`key_set(service = "[referencia de tu preferencia]", username = "[identificador de tu gusto]")`
+`key_set(service = "[ref. de tu preferencia]", username = "[id. de tu gusto]")`
 
 Una vez registrada en el equipo la llave, queda lista para su uso en cualquier momento en esa máquina y deberás proporcionar los dos identificadores que elegiste para operar las *ingesta* a **R**, del modelo hecho en **Miro**.
 
@@ -125,10 +125,9 @@ variables <- tibble(var = datos_miro$nodes$var)
 
 
 
-::: {.content-hidden when-format="pdf"}
 
 ```{r}
-#graphviz.plot(netMiro_bn, layout = "dot")
+graphviz.plot(netMiro_bn, layout = "dot")
 
 ```
 
@@ -140,16 +139,11 @@ La lista de variables identificadas es:
 #| echo: false
 
 
-library(DT)
 datos_miro$nodes %>% 
   select(text, var, color) %>% 
-  datatable(rownames = FALSE, width = "90%",
-            options = list(
-              headerCallback = DT::JS(
-                "function(thead) {",
-                "  $(thead).css('font-size', '70%');", "}"))) %>% 
-  formatStyle(columns = 1:3, fontSize = "70%")
+  flextable() %>% 
+  fontsize(size = 8, part = "header") %>% 
+  fontsize(size = 8)
 
 ```
 
-:::
