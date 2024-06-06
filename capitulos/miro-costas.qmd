@@ -1,3 +1,7 @@
+---
+comments:
+  hypothesis: true
+---
 # Datos
 
 ![](images/fisiografía.png)
