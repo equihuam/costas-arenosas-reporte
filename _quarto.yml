@@ -23,7 +23,7 @@ book:
     
   page-footer:
       left: |
-        Reporte Costas Arenosas.
+        [Costas Arenosas](https://sw-costas-arenosas.netlify.app/).
       right: |
         Reporte preparado con <a href="https://quarto.org/">Quarto</a>.
   cover-image: images/landscape-546343_1280.jpg
