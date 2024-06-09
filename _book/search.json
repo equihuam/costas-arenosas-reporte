@@ -26,7 +26,7 @@
   {
     "objectID": "capitulos/summary.html",
     "href": "capitulos/summary.html",
-    "title": "1  Summary",
+    "title": "1  Resumen",
     "section": "",
     "text": "México, como otros países, inició la implementación de un sistema de cuentas de ecosistemas cuyo propósito es calcular y poner regularmente a disposición de la sociedad información sobre la extensión y la condición de los ecosistemas, así como de la capacidad para obtener los diversos beneficios que la naturaleza provee como servicios ecosistémicos. Como parte de un piloto mundial, México desarrolló un sistema de contabilidad para ecosistemas terrestres (INEGI 2021). Ahora, hay el interés en extender el sistema para incluir los ambientes costeros, marinos y acuáticos continentales. Para los ecosistemas terrestres México desarrolló una propuesta que aprovecha datos masivos (Big data) y la aplicación de técnicas de inteligencia artificial (IA). La experiencia mostró que este planteamiento puede ser de enorme ayuda para llevar a cabo una contabilidad de ecosistemas a gran escala. Las técnicas de IA son atípicas dentro del ámbito de la contabilidad ambiental y por tanto se estima que la estrategia iniciada en nuestro país es innovadora. Además, las nuevas propuestas en el uso de las técnicas de aprendizaje de máquina apuntan a preferir formulaciones causales que si bien son procesadas por máquinas, produzcan resultados entendibles para los usuarios humanos. Esto es lo que está emergiendo como “Inteligencia artificial interpretable” (IAI por las siglas en inglés, Mihaljevic et al 2021). Una aproximación del tipo IAI para el caso de las cuentas de ecosistemas permitiría, con base en datos y un enfoque sistémico, un mayor entendimiento de las relaciones entre las acciones de origen antrópico y su repercusión en los ecosistemas del país y en los servicios que estos proporcionan. En este proyecto, se propone evaluar como prueba de concepto, la condición de las costas arenosas (playas y dunas) de todo el país, por medio del cálculo de un índice de integridad de los ecosistemas de costas arenosas (IIECA) bajo el paradigma de IAI."
   },
@@ -35,10 +35,7 @@
     "href": "capitulos/intro.html",
     "title": "2  Introducción",
     "section": "",
-    "text": "El proyecto Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina se propone generar estimaciones de la condición en la que se encuentran los ecosistemas costeros, especialmente los arenosos, del país con una representación raster y resolución geográfica de pixeles de 3 segundos (aproximadamente 100 m). También se está considerando tener una valoración de mayor resolución para la zona costera de Quintana Roo, en donde se propone lograr una resolución geográfica con pixeles 0.3 segundos.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción</span>"
-    ]
+    "text": "El proyecto Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina se propone generar estimaciones de la condición en la que se encuentran los ecosistemas costeros, especialmente los arenosos, del país con una representación raster y resolución geográfica de pixeles de 3 segundos (aproximadamente 100 m). También se está considerando tener una valoración de mayor resolución para la zona costera de Quintana Roo, en donde se propone lograr una resolución geográfica con pixeles 0.3 segundos."
   },
   {
     "objectID": "capitulos/cap1/Chapter-1.html",
@@ -65,10 +62,7 @@
     "href": "capitulos/taller.html",
     "title": "5  bibliography: references.bib",
     "section": "",
-    "text": "6 Taller\n(Harper et al., 2002)\n\n\n\n\nHarper, S., Klimov, A., Uyeki, T., & Fukuda, K. (2002). Influenza. Clinics in Laboratory Medicine, 22(4), 863-882. https://doi.org/10.1016/s0272-2712(02)00022-7",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>bibliography: references.bib</span>"
-    ]
+    "text": "6 Taller\n(Harper2022?)"
   },
   {
     "objectID": "index.html",
