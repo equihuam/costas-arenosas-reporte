@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -82,13 +82,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -97,22 +91,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Buscar"
+    "search-submit-button-title": "Enviar"
   }
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
-<script>
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    document.body.classList.add('hypothesis-enabled');
-  });
-</script>
 <link href="../site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
-
 <script src="../site_libs/tabwid-1.1.3/tabwid.js"></script>
-
 
 
 </head>
@@ -123,13 +108,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/miro-costas.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Datos</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulos/miro-costas.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Datos</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -138,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../images/beach-7318494_1920.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -147,18 +132,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <a href="../">Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina</a> 
         <div class="sidebar-tools-main">
     <div class="dropdown">
-      <a href="" title="Descargar" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descargar"><i class="bi bi-download"></i></a>
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="../Estimación-de-la-integridad-ecosistémica-de-las-costas-arenosas-mexicanas-a-través-de-técnicas-de-aprendizaje-de-máquina.pdf">
               <i class="bi bi-bi-file-pdf pe-1"></i>
-            Descargar PDF
+            Download PDF
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="../Estimación-de-la-integridad-ecosistémica-de-las-costas-arenosas-mexicanas-a-través-de-técnicas-de-aprendizaje-de-máquina.epub">
               <i class="bi bi-bi-journal pe-1"></i>
-            Descargar ePub
+            Download ePub
             </a>
           </li>
       </ul>
@@ -182,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../capitulos/summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Resumen</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -218,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -256,27 +241,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
-
 
 <p><img src="images/fisiografía.png" class="img-fluid"></p>
 <p><a href="https://www.mdpi.com/2073-4441/12/9/2459">Characterization of Surface Evidence of Groundwater Flow Systems</a></p>
 <section id="agenda" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="agenda"><span class="header-section-number">3.1</span> Agenda</h2>
 <p>La reunión de inició del proyecto (<strong>CF-2023-G-1497</strong>):</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[-1,10,-1]">
-<div class="quarto-layout-row">
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 8.3%;justify-content: flex-start;">
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 8.3%;justify-content: center;">
 <p>&nbsp;</p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 83.3%;justify-content: flex-start;">
+<div class="quarto-layout-cell" style="flex-basis: 83.3%;justify-content: center;">
 <p><em>Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina</em></p>
 </div>
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 8.3%;justify-content: flex-start;">
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 8.3%;justify-content: center;">
 <p>&nbsp;</p>
 </div>
 </div>
@@ -359,12 +339,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="3.2" class="anchored" data-anchor-id="miro"><span class="header-section-number">3.2</span> Miro</h2>
 <section id="construcción-colaborativa-de-redes-bayesianas" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="construcción-colaborativa-de-redes-bayesianas"><span class="header-section-number">3.2.1</span> Construcción colaborativa de Redes Bayesianas</h3>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p>La propuesta que hacemos es usar <em>Miro</em> como plataforma de debate y construcción de consenso. Buscamos así aproximarnos a la estructura causal que vincula las variables que determinan el rendimiento y la sustentabilidad (social, económica y ambiental). Una vez resuelta esta etapa, es necesario transferir lo acordado en <em>Miro</em> a plataformas de análisis estadístico. Aquí, nos propusimos trasladar los resultados de <em>Miro</em> a <em>R</em>. Al hacer esto las posibilidades analíticas se potencian muy ampliamente. Como veremos, podemos recurrir a <code>dagitty</code> o incluso utilizar <em>Python</em> y <em>Netica</em>.</p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -450,16 +427,13 @@ Duplicated arcs:        0</code></pre>
 <pre><code>Loading required namespace: Rgraphviz</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="miro-costas_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="miro-costas_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>La lista de variables identificadas es:</p>
 <div class="cell">
 <div class="cell-output-display">
+
 <div class="tabwid"><style>.cl-50ede868{}.cl-50e2f688{font-family:'Arial';font-size:8pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-50e705a2{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-50e71e70{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-50e71e7a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-50e71e7b{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-50ede868"><thead><tr style="overflow-wrap:break-word;"><th class="cl-50e71e70"><p class="cl-50e705a2"><span class="cl-50e2f688">text</span></p></th><th class="cl-50e71e70"><p class="cl-50e705a2"><span class="cl-50e2f688">var</span></p></th><th class="cl-50e71e70"><p class="cl-50e705a2"><span class="cl-50e2f688">color</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">potencia de la ola (datos horarios 1940-2022)https://confluence.ecmwf.int/display/CKB/ERA5%3A&amp;#43;data&amp;#43;documentation</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">pot_ola</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">mareasMareografos de Pafícico y Atlántico (SEMAR) RODOLFO</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">mareas</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">forma de crecimiento de vegetación de dunas:Tomar de base de datos de Ileana/conabio. Zonas con arbustivas tienden mayor erosión. en zonas como dice marisa eso no pasa</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">habito</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">disponinibilidad de arena -ancho playa</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">ancho_playa</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">geología(geomorfología,tipo de roca)Pedir carta geológica minera servicio geologico mexicano. Octavio  y Karla en formato shape &amp;#34;Geológica minera&amp;#34;https://www.sgm.gob.mx/CartasDisponibles/ (en pdf hasta 1:50000)https://www.sgm.gob.mx/GeoInfoMexGobMx/#(shape)</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">geologia</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Arrecifes de coral-Buscar la mejor capa: blaqueamiento, Copernicus o Conabiohttps://simar.conabio.gob.mx/explorer/?undefined</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">coral</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">pastos marinoshttps://simar.conabio.gob.mx/explorer/?undefined</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">pastos</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Disponibilidad de agua salobre o dulce</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">aguas_disp</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Flujo subterráneo. Información disponible en SHP (polígonos). Solicitar a&nbsp;Rodolfo /&nbsp;Valeria. Tiene una clasificación. Nivel nacional. Artículo: https://www.mdpi.com/2073-4441/12/9/2459</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">flujo_subterraneo</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Sol. WB_Global solar atlas. https://globalsolaratlas.info/map?c&amp;#61;19.248922,-97.171326,9&amp;amp;s&amp;#61;19.519781,-96.911168&amp;amp;m&amp;#61;site </span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">radiacion</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">EvapotraspiraciónEn terminos de germinación y cobertura</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">evapotranspiracion</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">NOTAS GENERALESJuntaremos playa y duna como un solo ecosistema. Sugerencia de Rodolfo</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">notas_1</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">gray</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Plataforma continental. GEBCO. Gridded Bathymetry data download.https://download.gebco.net</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">plataforma_cont</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Infraestructura</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">infraestruct</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">orange</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">ManglaresSIMARPaty Moreno</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">mangle</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Estructuras marinas</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">estruct_marina</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">orange</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Influencia antrópica</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">influ_antro</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">orange</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">ALTERACIONES ANTROPICAS DE LA Calidad del agua</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">alt_antro</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">orange</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Pendiente de la playaInformación puntualMónica y otros</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">pendiente</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Diámetro mediano D50(base de datos GICP-IIUNAM)</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">d50</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Redondez sedimento. (base de datos GICP-IIUNAM)</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">redondez</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Dirección de la línea de costa con relación al oleaje y al vientoUsar línea de costa propuesta por  Rodolfo</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dir_costa</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Efecto del sargazo</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">EfectoDelSargaso</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">violet</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Corrientes MarinasAtlas de corrientes IMTA de Efraín Mateos (Base de datos del CEMIE)VALERIA</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">corrientes_m</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Especies invasorasUsar datos procesados por Julián</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">invasoras</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Perfil de sueloPerfiles edafológicos se pueden encontrar en:https://www.inegi.org.mx/app/biblioteca/ficha.html?upc&amp;#61;702825266707Suelos sueltos y poco compactados son más susceptibles a la erosión eólica, lo que facilita la formación de dunas. Por otro lado, suelos más compactos pueden resistir mejor la acción del viento. La presencia de diferentes horizontes en el perfil edafológico puede afectar la disponibilidad de sedimentos para la formación de dunas. Un horizonte superficial arenoso es ideal para la movilización de partículas.</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">perfilsuelo</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Macroalgashttps://fjps.springeropen.com/articles/10.1186/s43094-020-00147-6</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">macroalgas</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Estacionalidad fuente: copernicus. posprocesar para ver también temporada de secas VALERIA - Marisa proporciona el criterio</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">secas</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Condición</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">condicion</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Precipitación- fuente: copernicus. posprocesar para ver también temporada de secas VALERIA</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">lluvia_anual</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">GastoEscurrimiento en cuencaAporte de sedimento terrígeno</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">gasto</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dirección de la ola (datos horarios 1940-2022)https://confluence.ecmwf.int/display/CKB/ERA5%3A&amp;#43;data&amp;#43;documentation</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dir_ola</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">velocidad del viento&nbsp;(datos horarios 1940-2022)https://confluence.ecmwf.int/display/CKB/ERA5%3A&amp;#43;data&amp;#43;documentationEventos de vientos extremos. Encontrar umbrales de viento y ver si favorecen la construcción o la destrucción de duna. ¿Velocidad de inicio de arrastre?WB_Atlas eólico mundial: https://globalwindatlas.info/es/PENDIENTE DEFINIR UMBRALES</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">vel_viento</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dirección del viento&nbsp;(datos horarios 1940-2022)https://confluence.ecmwf.int/display/CKB/ERA5%3A&amp;#43;data&amp;#43;documentation</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dir_viento</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Detección</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">inf_2</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Contexto</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">inf_1</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">blue</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Otro</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">inf_4</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">violet</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Intervención hunama</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">inf_3</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">orange</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">HumedadEn terminos de germinación y cobertura</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">humedad</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Checar pagina de idea del instituto de geografíahttps://www.gits.igg.unam.mx/idea/descargaGaby Gómez</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">notas_2</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">gray</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Tasa de desplazamiento(Erosión- / acresión &amp;#43;)</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">-</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">erosibilidad</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">erosibilidad</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Resolución raster100 m por lado (equivalete a 3 segundos)En versión &amp;#34;caso de estudio&amp;#34; serán pixeles de 10m por lado (equivale a 0.3 segundos).</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">resolucion</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">cyan</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Ale:Presencia de especies indicadoras sensibles a cambios en la costa:</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">-</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">Aves marinas: chorlosAudubon society y Conell</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">-</span></p></td><td class="cl-50e71e7a"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-50e71e7b"><p class="cl-50e705a2"><span class="cl-50e2f688">Sitios de anidación de tortugas marinas</span></p></td><td class="cl-50e71e7b"><p class="cl-50e705a2"><span class="cl-50e2f688">-</span></p></td><td class="cl-50e71e7b"><p class="cl-50e705a2"><span class="cl-50e2f688">dark_green</span></p></td></tr></tbody></table></div>
 </div>
 </div>
@@ -548,27 +522,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -578,17 +535,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -600,130 +548,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -767,7 +592,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -793,32 +617,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -880,12 +678,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../capitulos/intro.html" class="pagination-link" aria-label="Introducción">
+      <a href="../capitulos/intro.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../capitulos/cap1/Chapter-1.html" class="pagination-link" aria-label="Chapter 2">
+      <a href="../capitulos/cap1/Chapter-1.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chapter 2</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -893,18 +691,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>Reporte Costas Arenosas.</p>
-</div>   
+    <div class="nav-footer-left"><a href="https://sw-costas-arenosas.netlify.app/">Costas Arenosas</a>.</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">
-<p>Reporte preparado con <a href="https://quarto.org/">Quarto</a>.</p>
-</div>
+    <div class="nav-footer-right">Reporte preparado con <a href="https://quarto.org/">Quarto</a>.</div>
   </div>
 </footer>
-
 
 
 
