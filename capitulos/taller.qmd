@@ -154,4 +154,3 @@ Una vez que se introdujo al grupo de trabajo a la metodología de identificació
 
 3.  Tabla de acuerdos con tareas y responsables para la siguiente fase del proyecto.
 
-## bibliography: references.bib

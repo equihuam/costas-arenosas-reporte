@@ -117,28 +117,38 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \usepackage{fontspec}
@@ -154,8 +164,6 @@
 \usepackage{float}
 \usepackage{wrapfig}
 \KOMAoption{captions}{tableheading}
-\makeatletter
-\makeatother
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
 \makeatother
@@ -195,18 +203,10 @@
 \newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
 \makeatother
 \makeatletter
+\makeatother
+\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
-\makeatother
-\makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
-\makeatother
-\makeatletter
-\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
 \makeatother
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -220,7 +220,8 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
+
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
@@ -248,7 +249,6 @@ mexicanas a través de técnicas de aprendizaje de máquina}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, frame hidden, sharp corners, interior hidden, enhanced, breakable]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Tabla de contenidos}
 {
@@ -258,8 +258,7 @@ mexicanas a través de técnicas de aprendizaje de máquina}
 }
 \bookmarksetup{startatroot}
 
-\hypertarget{preface}{%
-\chapter*{Preface}\label{preface}}
+\chapter*{Preface}\label{preface}
 \addcontentsline{toc}{chapter}{Preface}
 
 \markboth{Preface}{Preface}
@@ -270,8 +269,7 @@ mexicanas a través de técnicas de aprendizaje de máquina}
 
 \bookmarksetup{startatroot}
 
-\hypertarget{resumen}{%
-\chapter{Resumen}\label{resumen}}
+\chapter{Resumen}\label{resumen}
 
 México, como otros países, inició la implementación de un sistema de
 cuentas de ecosistemas cuyo propósito es calcular y poner regularmente a
@@ -304,8 +302,7 @@ de los ecosistemas de costas arenosas (IIECA) bajo el paradigma de IAI.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{introducciuxf3n}{%
-\chapter{Introducción}\label{introducciuxf3n}}
+\chapter{Introducción}\label{introducciuxf3n}
 
 El proyecto \textbf{Estimación de la integridad ecosistémica de las
 costas arenosas mexicanas a través de técnicas de aprendizaje de
@@ -319,161 +316,173 @@ segundos.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{datos}{%
-\chapter{Datos}\label{datos}}
+\chapter{Datos}\label{datos}
 
 \includegraphics{capitulos/images/fisiografía.png}
 
 \href{https://www.mdpi.com/2073-4441/12/9/2459}{Characterization of
 Surface Evidence of Groundwater Flow Systems}
 
-\hypertarget{agenda}{%
-\section{Agenda}\label{agenda}}
+\section{Agenda}\label{agenda}
 
-La reunión de inició del proyecto: \emph{``Estimación de la integridad
-ecosistémica de las costas arenosas mexicanas a través de técnicas de
-aprendizaje de máquina (CF-2023-G-1497)''}, se realizó del Miércoles 29
-al viernes 31 de mayo de 2024.
-
-\hypertarget{duxeda-1-miuxe9rcoles-29-de-mayo}{%
-\subsection{Día 1 Miércoles 29 de
-mayo}\label{duxeda-1-miuxe9rcoles-29-de-mayo}}
-
-\textbf{10:00-10:20 Inicio }
-
-\begin{itemize}
-\tightlist
-\item
-  Bienvenida
-\item
-  Presentación del taller
-\item
-  Presentación de asistentes
-\end{itemize}
-
-\textbf{10:20-11:20 ¿Por qué creemos que es necesario un proyecto como
-este?}
-
-\begin{itemize}
-\tightlist
-\item
-  Visión integral
-\item
-  Caso particular de las costas
-\item
-  Desarrollo de habilidades
-\item
-  ¿Cómo sugerimos hacerlo?
-\item
-  Co-construcción
-\item
-  Ciencia abierta
-\item
-  Principios fair
-\item
-  Análisis con base en propuesta del seea ea
-\item
-  Flujos de trabajo (pipelines)
-\end{itemize}
-
-\textbf{11:20-12:20 Descripción y avances del proyecto}
-
-\begin{itemize}
-\tightlist
-\item
-  Generalidades
-\item
-  Marco conceptual
-\item
-  Compromisos para las tres etapas
-\item
-  Avances
-\end{itemize}
-
-\textbf{12:20-12:40 Descanso}
-
-\textbf{12:40-14:00 El Sistema de Contabilidad de Ecosistemas.}
-
-\begin{itemize}
-\tightlist
-\item
-  Activos ecosistémicos
-\item
-  Cuentas de extensión
-\item
-  Condición
-\item
-  Servicios ecosistémicos
-\item
-  Cuenta de condición
-\item
-  Modelo de integridad ecosistémica
-\end{itemize}
-
-\textbf{14:00-15:00 Comida}
-
-\textbf{15:00-17:00 Estrategia metodológica}
-
-\begin{itemize}
-\tightlist
-\item
-  De lo conceptual a lo analítico (de miro a nética)
-\item
-  Enfoque causal
-\item
-  Probabilístico
-\item
-  Documentación
-\item
-  Gestión de datos
-\end{itemize}
-
-\hypertarget{duxeda-2-jueves-30-de-mayo}{%
-\subsection{Día 2 jueves 30 de mayo}\label{duxeda-2-jueves-30-de-mayo}}
-
-\textbf{10:00 -14:00 Gestión de datos y Modelación Participativa}
-
-\begin{itemize}
-\tightlist
-\item
-  Variables existentes
-\item
-  Nuevas variables
-\item
-  Sugerencias para documentar
-\item
-  Gestionar datos.
-\item
-  Ejercicio de modelación participativa
-\end{itemize}
-
-\textbf{14:00-15:00 Comida y foto grupal}
-
-\textbf{15:00-17:00 Acuerdos y siguientes pasos}
-
-\hypertarget{duxeda-3-viernes-31-de-mayo}{%
-\subsection{Día 3 viernes 31 de
-mayo}\label{duxeda-3-viernes-31-de-mayo}}
-
-\textbf{10:00 -12:20 Evaluación integral en las costas de Quintana Roo}
-
-\textbf{12:20 -14:00 Acuerdos y siguientes pasos}
-
-\textbf{14:00 Fin del taller}
-
-\hypertarget{miro}{%
-\section{Miro}\label{miro}}
-
-\hypertarget{construcciuxf3n-colaborativa-de-redes-bayesianas}{%
-\subsection{Construcción colaborativa de Redes
-Bayesianas}\label{construcciuxf3n-colaborativa-de-redes-bayesianas}}
+La reunión de inició del proyecto (\textbf{CF-2023-G-1497}):
 
 \begin{figure}
 
-\begin{minipage}[t]{0.50\linewidth}
+\begin{minipage}{0.08\linewidth}
+~\end{minipage}%
+%
+\begin{minipage}{0.83\linewidth}
+\emph{Estimación de la integridad ecosistémica de las costas arenosas
+mexicanas a través de técnicas de aprendizaje de máquina}\end{minipage}%
+%
+\begin{minipage}{0.08\linewidth}
+~\end{minipage}%
 
-{\centering 
+\end{figure}%
 
+Se realizó del miércoles 29 al viernes 31 de mayo de 2024.
+
+\subsection{Día 1 miércoles 29 de
+mayo}\label{duxeda-1-miuxe9rcoles-29-de-mayo}
+
+\begin{itemize}
+\item
+  \textbf{10:00-10:20 inicio }
+
+  \begin{itemize}
+  \tightlist
+  \item
+    bienvenida
+  \item
+    presentación del taller
+  \item
+    presentación de asistentes
+  \end{itemize}
+\item
+  \textbf{10:20-11:20 ¿por qué creemos que es necesario un proyecto como
+  este?}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    visión integral
+  \item
+    caso particular de las costas
+  \item
+    desarrollo de habilidades
+  \item
+    ¿cómo sugerimos hacerlo?
+  \item
+    co-construcción
+  \item
+    ciencia abierta
+  \item
+    principios fair
+  \item
+    análisis con base en propuesta del seea ea
+  \item
+    flujos de trabajo (pipelines)
+  \end{itemize}
+\item
+  \textbf{11:20-12:20 descripción y avances del proyecto}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    generalidades
+  \item
+    marco conceptual
+  \item
+    compromisos para las tres etapas
+  \item
+    avances
+  \end{itemize}
+\item
+  \textbf{12:20-12:40 descanso}
+\item
+  \textbf{12:40-14:00 el sistema de contabilidad de ecosistemas.}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    activos ecosistémicos
+  \item
+    cuentas de extensión
+  \item
+    condición
+  \item
+    servicios ecosistémicos
+  \item
+    cuenta de condición
+  \item
+    modelo de integridad ecosistémica
+  \end{itemize}
+\item
+  \textbf{14:00-15:00 comida}
+\item
+  \textbf{15:00-17:00 estrategia metodológica}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    de lo conceptual a lo analítico (de miro a nética)
+  \item
+    enfoque causal
+  \item
+    probabilístico
+  \item
+    documentación
+  \item
+    gestión de datos
+  \end{itemize}
+\end{itemize}
+
+\subsection{Día 2 jueves 30 de mayo}\label{duxeda-2-jueves-30-de-mayo}
+
+\begin{itemize}
+\item
+  \textbf{10:00 -14:00 gestión de datos y modelación participativa}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    variables existentes
+  \item
+    nuevas variables
+  \item
+    sugerencias para documentar
+  \item
+    gestionar datos.
+  \item
+    ejercicio de modelación participativa
+  \end{itemize}
+\item
+  \textbf{14:00-15:00 comida y foto grupal}
+\item
+  \textbf{15:00-17:00 acuerdos y siguientes pasos}
+\end{itemize}
+
+\subsection{Día 3 viernes 31 de mayo}\label{duxeda-3-viernes-31-de-mayo}
+
+\begin{itemize}
+\item
+  \textbf{10:00 -12:20 Evaluación integral en las costas de Quintana
+  Roo}
+\item
+  \textbf{12:20 -14:00 Acuerdos y siguientes pasos}
+\item
+  \textbf{14:00 Fin del taller}
+\end{itemize}
+
+\section{Miro}\label{miro}
+
+\subsection{Construcción colaborativa de Redes
+Bayesianas}\label{construcciuxf3n-colaborativa-de-redes-bayesianas}
+
+\begin{figure}
+
+\begin{minipage}{0.50\linewidth}
 La propuesta que hacemos es usar \emph{Miro} como plataforma de debate y
 construcción de consenso. Buscamos así aproximarnos a la estructura
 causal que vincula las variables que determinan el rendimiento y la
@@ -482,27 +491,13 @@ etapa, es necesario transferir lo acordado en \emph{Miro} a plataformas
 de análisis estadístico. Aquí, nos propusimos trasladar los resultados
 de \emph{Miro} a \emph{R}. Al hacer esto las posibilidades analíticas se
 potencian muy ampliamente. Como veremos, podemos recurrir a
-\texttt{dagitty} o incluso utilizar \emph{Python} y \emph{Netica}.
-
-}
-
-\end{minipage}%
+\texttt{dagitty} o incluso utilizar \emph{Python} y
+\emph{Netica}.\end{minipage}%
 %
-\begin{minipage}[t]{0.50\linewidth}
+\begin{minipage}{0.50\linewidth}
+\includegraphics{capitulos/Images/colaboración.png}\end{minipage}%
 
-{\centering 
-
-\raisebox{-\height}{
-
-\includegraphics{capitulos/Images/colaboración.png}
-
-}
-
-}
-
-\end{minipage}%
-
-\end{figure}
+\end{figure}%
 
 Hemos preparado una biblioteca con las rutinas necesarias para
 transferir lo trabajado en \textbf{Miro} (básicamente desarrollo
@@ -628,13 +623,7 @@ Duplicated arcs:        0
 Loading required namespace: Rgraphviz
 \end{verbatim}
 
-\begin{figure}[H]
-
-{\centering \includegraphics{capitulos/miro-costas_files/figure-pdf/unnamed-chunk-4-1.pdf}
-
-}
-
-\end{figure}
+\includegraphics{capitulos/miro-costas_files/figure-pdf/unnamed-chunk-4-1.pdf}
 
 La lista de variables identificadas es:
 
@@ -958,90 +947,7 @@ La lista de variables identificadas es:
 
 \bookmarksetup{startatroot}
 
-\hypertarget{chapter-2}{%
-\chapter{Chapter 2}\label{chapter-2}}
-
-Something very interesting.
-
-Tabla ejemplo
-
-\begin{table}
-
-\begin{minipage}[t]{0.33\linewidth}
-
-{\centering 
-
-~
-
-}
-
-\end{minipage}%
-%
-\begin{minipage}[t]{0.33\linewidth}
-
-{\centering 
-
-\begin{longtable}[]{@{}lc@{}}
-\caption{\label{tbl-letters}My Caption}\tabularnewline
-\toprule\noalign{}
-Col1 & Asunto \\
-\midrule\noalign{}
-\endfirsthead
-\toprule\noalign{}
-Col1 & Asunto \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Contenido & 1 \\
-Ejemplo & 3 \\
-Fin & 4 \\
-\end{longtable}
-
-}
-
-\end{minipage}%
-%
-\begin{minipage}[t]{0.33\linewidth}
-
-{\centering 
-
-~
-
-}
-
-\end{minipage}%
-
-\end{table}
-
-See Tabla~\ref{tbl-letters}.
-
-\begin{figure}
-
-{\centering \includegraphics[width=2.08333in,height=\textheight]{capitulos/cap1/images/Captura de pantalla 2024-05-11 020540.png}
-
-}
-
-\caption{Caption}
-
-\end{figure}
-
-\bookmarksetup{startatroot}
-
-\hypertarget{references}{%
-\chapter*{References}\label{references}}
-\addcontentsline{toc}{chapter}{References}
-
-\markboth{References}{References}
-
-\hypertarget{refs}{}
-\begin{CSLReferences}{0}{0}
-\end{CSLReferences}
-
-\bookmarksetup{startatroot}
-
-\hypertarget{taller}{%
-\chapter{Taller}\label{taller}}
+\chapter{Taller}\label{taller}
 
 \textbf{Taller de arranque del grupo de trabajo para unificar
 metodologías y determinar las variables a analizar}
@@ -1058,16 +964,20 @@ conjunto las variables potenciales para los ejercicios de modelación.
 
 \textbf{Objetivos particulares:}
 
-1.~~~~~~~~~~~~ Presentar el proyecto, sus etapas, los productos
-comprometidos y tiempos estimados.
-
-2.~~~~~~~~~~~~ Presentar las bases teórico-metodológicas del proyecto
-(redes bayesianas), así como los fundamentos de ciencia abierta (FAIR).
-
-3.~~~~~~~~~~~~ Identificar posibles variables a utilizar en el modelaje
-del proyecto, así como las fuentes de datos e información relevante en
-dos escalas (para el nivel nacional y un caso de estudio potencial a
-detalle en la Península de Yucatán).
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Presentar el proyecto, sus etapas, los productos comprometidos y
+  tiempos estimados.
+\item
+  Presentar las bases teórico-metodológicas del proyecto (redes
+  bayesianas), así como los fundamentos de ciencia abierta (FAIR).
+\item
+  Identificar posibles variables a utilizar en el modelaje del proyecto,
+  así como las fuentes de datos e información relevante en dos escalas
+  (para el nivel nacional y un caso de estudio potencial a detalle en la
+  Península de Yucatán).
+\end{enumerate}
 
 \textbf{Descripción de las actividades}
 
@@ -1092,7 +1002,7 @@ actividades durante los tres días de trabajo.
 
 \textbf{Día 1.}
 
-\textbf{1.~~~ Bienvenida y presentación}
+\textbf{1. Bienvenida y presentación}
 
 Al inicio del taller, el Dr.~Octavio Pérez Maqueo dio una breve
 bienvenida al taller e informó que cada día se iba a pasar una lista de
@@ -1111,7 +1021,7 @@ Posteriormente a la información de la lista y consentimiento, se invitó
 a cada participante a presentarse brevemente con su nombre e
 institución.
 
-\textbf{2.~~~~~ Presentación del contexto y origen del proyecto}
+\textbf{2. Presentación del contexto y origen del proyecto}
 
 El Dr.~Pérez Maqueo desarrolló una presentación en torno a la pregunta
 ¿por qué creemos que es necesario un proyecto como este? Para ello, la
@@ -1119,43 +1029,52 @@ exposición contó con los siguientes componentes:
 
 Visión integral
 
-o~~~~~~ Caso particular de las costas
-
-o~~~~~~ Desarrollo de habilidades
+\begin{itemize}
+\item
+  Caso particular de las costas
+\item
+  Desarrollo de habilidades
+\end{itemize}
 
 ¿Cómo sugerimos hacerlo?
 
-o~~~~~~ Co-construcción
-
-o~~~~~~ Ciencia Abierta y principios FAIR
-
-o~~~~~~ Análisis con base en propuesta del SEEA EA
-
-o~~~~~~ Flujos de trabajo (pipelines)
+\begin{itemize}
+\item
+  Co-construcción
+\item
+  Ciencia Abierta y principios FAIR
+\item
+  Análisis con base en propuesta del SEEA EA
+\item
+  Flujos de trabajo (pipelines)
+\end{itemize}
 
 En esta primera presentación se destacaron algunos argumentos de la
 necesidad que dio origen al proyecto:
 
-o~~ Fortalecer iniciativas nacionales e internacionales que vemos como
-una alternativa viable hacia la sustentabilidad.
-
-o~~ Desarrollar metodologías que nos permitan a nosotros u otras
-personas rehacer mañana el análisis que hicimos hoy.
-
-o~~ Aprender sobre nuevas formas de análisis dada la capacidad de datos
-y cómputo actuales.
-
-o~~ Analizar a los socioecosistemas de manera integral incorporando las
-dependencias espaciales que caracteriza a estos sistemas.
-
-o~~ Implementar los resultados del proyecto en la toma de decisiones.
+\begin{itemize}
+\item
+  Fortalecer iniciativas nacionales e internacionales que vemos como una
+  alternativa viable hacia la sustentabilidad.
+\item
+  Desarrollar metodologías que nos permitan a nosotros u otras personas
+  rehacer mañana el análisis que hicimos hoy.
+\item
+  Aprender sobre nuevas formas de análisis dada la capacidad de datos y
+  cómputo actuales.
+\item
+  Analizar a los socioecosistemas de manera integral incorporando las
+  dependencias espaciales que caracteriza a estos sistemas.
+\item
+  Implementar los resultados del proyecto en la toma de decisiones.
+\end{itemize}
 
 Las presentaciones están disponibles en el blog donde se subirán los
 materiales del proyecto:~
 
 \url{https://sw-costas-arenosas.netlify.app/presentaciones\#category=presentaci\%C3\%B3n}
 
-\textbf{3.~~~~~ Descripción del proyecto y marco teórico}
+\textbf{3. Descripción del proyecto y marco teórico}
 
 En la segunda parte de la mañana del día 1, se expusieron las
 generalidades del proyecto, el marco conceptual, los compromisos
@@ -1167,11 +1086,15 @@ abióticos en un índice de integridad ecosistémica, a través de un modelo
 causal bajo una aproximación de Inteligencia Artificial Interpretable
 (IAI)'':
 
-o~ Nacional
-
-o~ Incorporar la complejidad asociada a ecosistemas costeros
-
-o~ Aprendizaje Automático Interpretable (redes bayesianas)
+\begin{itemize}
+\tightlist
+\item
+  Nacional
+\item
+  Incorporar la complejidad asociada a ecosistemas costeros
+\item
+  Aprendizaje Automático Interpretable (redes bayesianas)
+\end{itemize}
 
 El resultado principal es proponer una metodología para analizar la
 integridad ecosistémica de las costas arenosas de México, con el fin de
@@ -1202,7 +1125,7 @@ y su propuesta de desarrollo. Al terminar la exposición hubo un breve
 espacio para algunas dudas o inquietudes, incluyendo a las personas que
 atendieron en línea.
 
-\textbf{4.~~~~~ Presentación de la estrategia metodológica}
+\textbf{4. Presentación de la estrategia metodológica}
 
 La siguiente presentación buscó que el grupo cuente con la información
 base de la estrategia metodológica del taller, la cual sirvió también
@@ -1210,52 +1133,61 @@ para realizar el ejercicio planeado para el día 2 de trabajo, en el cual
 se identificaron las variables y fuentes de información. La presentación
 contó con los siguientes elementos:
 
-o~~~~~~ De lo conceptual a lo analítico (de Miro a Nética)
-
-o~~~~~~ Enfoque causal y probabilístico
-
-o~~~~~~ Documentación y gestión de datos
+\begin{itemize}
+\item
+  De lo conceptual a lo analítico (de Miro a Nética)
+\item
+  Enfoque causal y probabilístico
+\item
+  Documentación y gestión de datos
+\end{itemize}
 
 A lo largo del día se plantearon diversas inquietudes, por ejemplo:
 
-o~~~~~~ Definir las fronteras del área de estudio.
-
-o~~~~~~ Definir si el grupo estaba en posibilidades de un estudio de
-caso a profundidad en la Península d Yucatán.
-
-o~~~~~~ Considerar si se considerará información de la cuenca a nivel
-superficial y/o a los acuíferos.
-
-o~~~~~~ Definir la temporalidad, qué años y si se toman las dos
-temporadas para las costas.
-
-o·~~~~~~ Necesidad de llegar a las resoluciones espaciales para la
-información a nivel nacional y para un estudio de caso.
+\begin{itemize}
+\item
+  Definir las fronteras del área de estudio.
+\item
+  Definir si el grupo estaba en posibilidades de un estudio de caso a
+  profundidad en la Península d Yucatán.
+\item
+  Considerar si se considerará información de la cuenca a nivel
+  superficial y/o a los acuíferos.
+\item
+  Definir la temporalidad, qué años y si se toman las dos temporadas
+  para las costas.
+\item
+  Necesidad de llegar a las resoluciones espaciales para la información
+  a nivel nacional y para un estudio de caso.
+\end{itemize}
 
 Además, se enlistó la información que podría ser relevante y algunas
 fuentes de datos que debían retomarse:
 
-o~ Las imágenes que se usaron para el inventario de humedales, que tiene
-imágenes desde el 75 u 83 y del 2005-2006. Consultar a CONABIO.
-
-o~ Las imágenes de los vuelos que tiene INEGI y/o SEMARNAT.
-
-o~ Biblioteca de imágenes de ICA, donde incluso se cuenta con vuelos de
-los años sesenta (aerofotos).
-
-o~ Acervo de la compañía mexicana de aerofoto, que se había depositado
-en el Instituto de Geografía-UNAM, sin embargo, como no estaban cuidados
-los rollos, ICA se los llevo. Los tiene la Fundación ICA.
-
-o~ Las fotografías aéreas más antiguas que tomaron los EE. UU., las
-cuales están escaneadas. El equipo de Rodolfo Silva tiene acceso a esta
-información. Una parte ya está digitalizada, pero no toda está
-organizada, hay mucho trabajo pendiente.
-
-o~ Información de la CFE.
-
-o~ Las cartas geológico-mineras de todo el país. Los tiene el servicio
-geológico mexicano
+\begin{itemize}
+\item
+  Las imágenes que se usaron para el inventario de humedales, que tiene
+  imágenes desde el 75 u 83 y del 2005-2006. Consultar a CONABIO.
+\item
+  Las imágenes de los vuelos que tiene INEGI y/o SEMARNAT.
+\item
+  Biblioteca de imágenes de ICA, donde incluso se cuenta con vuelos de
+  los años sesenta (aerofotos).
+\item
+  Acervo de la compañía mexicana de aerofoto, que se había depositado en
+  el Instituto de Geografía-UNAM, sin embargo, como no estaban cuidados
+  los rollos, ICA se los llevo. Los tiene la Fundación ICA.
+\item
+  Las fotografías aéreas más antiguas que tomaron los EE. UU., las
+  cuales están escaneadas. El equipo de Rodolfo Silva tiene acceso a
+  esta información. Una parte ya está digitalizada, pero no toda está
+  organizada, hay mucho trabajo pendiente.
+\item
+  Información de la CFE.
+\item
+  Las cartas geológico-mineras de todo el país. Los tiene el servicio
+  geológico mexicano
+\end{itemize}
 
 El equipo facilitador tomó notas cada día de trabajo de estos puntos
 para llegar a definiciones en una tabla de acuerdos al final del taller
@@ -1267,7 +1199,7 @@ el día 2.
 
 \textbf{Día 2}
 
-\textbf{5.~~~~~ Presentación del tema gestión de datos y presentación de
+\textbf{5. Presentación del tema gestión de datos y presentación de
 variables}
 
 Al inicio del día 2, se continuó con el tema de gestión de datos y se
@@ -1279,9 +1211,14 @@ Posteriormente se brindó un ejemplo de variables y sus interacciones. De
 esta manera, el grupo conoció la metodología específica para definir
 variables e interacciones.
 
-\textbf{6.~~~~~ Ejercicio participativo de identificación de variables}
+\textbf{6. Ejercicio participativo de identificación de variables}
 
-a)~~~~~ Mecánica del ejercicio:
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Mecánica del ejercicio:
+\end{enumerate}
 
 Una vez que se introdujo al grupo de trabajo a la metodología de
 identificación de variables, se realizó un ejercicio donde el grupo
@@ -1291,28 +1228,42 @@ facilitador había preparado previamente el pizarrón de trabajo, se
 propusieron variables que ya se habían identificado, además de presentar
 el ejemplo de un caso que se desarrolló en un proyecto previo.
 
-4.~~~~~~~~~~~~ Definir los parámetros técnicos para el intercambio de
-información entre el equipo de trabajo (resolución, formato, metadatos,
-etc.).
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Definir los parámetros técnicos para el intercambio de información
+  entre el equipo de trabajo (resolución, formato, metadatos, etc.).
+\end{enumerate}
 
 \textbf{Resultados generados:}
 
-1.~~~~~~~~~~~~~~~~~~~~ Mural digital con la lista de variables
-potenciales identificada por el grupo de trabajo, la cual incluye fuente
-de datos, la escala de información y la persona que propuso la variable
-y que podría gestionar el acceso a la información.
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Mural digital con la lista de variables potenciales identificada por
+  el grupo de trabajo, la cual incluye fuente de datos, la escala de
+  información y la persona que propuso la variable y que podría
+  gestionar el acceso a la información.
+\item
+  Lista de fuentes de información adicionales que puedan servir como
+  insumo para el modelaje.
+\item
+  Tabla de acuerdos con tareas y responsables para la siguiente fase del
+  proyecto.
+\end{enumerate}
 
-2.~~~~~~~~~~~~~~~~~~~~ Lista de fuentes de información adicionales que
-puedan servir como insumo para el modelaje.
+\bookmarksetup{startatroot}
 
-3.~~~~~~~~~~~~~~~~~~~~ Tabla de acuerdos con tareas y responsables para
-la siguiente fase del proyecto.
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
 
-\hypertarget{bibliography-references.bib}{%
-\section{bibliography:
-references.bib}\label{bibliography-references.bib}}
+\markboth{References}{References}
 
-(\textbf{Harper2022?})
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{1}
+\end{CSLReferences}
 
 
 
