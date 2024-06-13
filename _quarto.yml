@@ -43,9 +43,14 @@ book:
     - capitulos/intro.qmd
     - capitulos/miro-costas.qmd
     - capitulos/cap1/Chapter-1.qmd
-    - capitulos/references.qmd
     - capitulos/taller.qmd
+<<<<<<< HEAD
     - capitulos/divulgacion.qmd
+=======
+    - capitulos/references.qmd
+    
+css: costas.css
+>>>>>>> 4f02ab858ca3bcfda7957723b88ba5a5a97a986a
 
 format:
   html:
