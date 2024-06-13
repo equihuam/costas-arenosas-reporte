@@ -43,8 +43,10 @@ book:
     - capitulos/intro.qmd
     - capitulos/miro-costas.qmd
     - capitulos/cap1/Chapter-1.qmd
-    - capitulos/references.qmd
     - capitulos/taller.qmd
+    - capitulos/references.qmd
+    
+css: costas.css
 
 format:
   html:
