@@ -18,7 +18,7 @@ Presentar la visión integral del proyecto, su origen, fundamentos teórico-meto
 
 **Descripción de las actividades**
 
-Los talleres realizados el 29 y 31 de mayo contaron con la participación de 14 personas que conforman el grupo núcleo de trabajo del proyecto (ocho mujeres y seis hombres, tres participando en línea), provenientes del Instituto de Ingeniería de la UNAM, el Instituto de Ecología A. C. y la UAM -- Xochimilco. Las listas de participantes se encuentran en el anexo 1.
+Los talleres realizados el 29 y 31 de mayo contaron con la participación de 14 personas que conforman el grupo núcleo de trabajo del proyecto (ocho mujeres y seis hombres, tres participando en línea), provenientes del Instituto de Ingeniería de la UNAM, el Instituto de Ecología A. C. y la UAM -- Xochimilco. Las listas de participantes se encuentran en este  [Archivo](Taller/Anexo%201%20Lista%20de%20participantes.pdf).
 
 El taller se realizó con un enfoque participativo, para lo cual, se preparó un [pizarrón digital](https://miro.com/welcomeonboard/ckhlZ3lXY1djM0FXd3ZIZmlpV3FUVXFONGJsUFJ0NGFIaWw0eGdHOHBDalhDdFk1Zjg1MUVOZTNMUmZaNDhPVHwzMDc0NDU3MzUyMDM4MTIwMjcwfDI=?share_link_id=865983900620) (plataforma Miro) y las presentaciones depositadas en el [blog de trabajo para el proyecto](https://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n). El instrumento de planeación del taller (carta descriptiva) con la propuesta de actividades detalladas se encuentra en el anexo 2.
 
@@ -28,7 +28,7 @@ A continuación, se presentan la descripción del desarrollo de las actividades 
 
 **1.    Bienvenida y presentación**
 
-Al inicio del taller, el Dr. Octavio Pérez Maqueo dio una breve bienvenida al taller e informó que cada día se iba a pasar una lista de asistencia; además, se le pidió a cada persona señalar si brindaban su consentimiento libre e informado para el uso de imagen e información considerando la siguiente leyenda: *\"Al marcar esta celda, usted da el consentimiento para que el proyecto \'Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina (CF-2023-G-1497)\' haga uso de materiales (fotos/videos) con su imagen, así como de la información derivada de los días de taller. Ninguna información privada o sensible será utilizada ni compartida fuera del marco del proyecto. Muchas gracias.\"* (Ver listas en el anexo 1)
+Al inicio del taller, el Dr. Octavio Pérez Maqueo dio una breve bienvenida al taller e informó que cada día se iba a pasar una lista de asistencia; además, se le pidió a cada persona señalar si brindaban su consentimiento libre e informado para el uso de imagen e información considerando la siguiente leyenda: *"Al marcar esta celda, usted da el consentimiento para que el proyecto 'Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina (CF-2023-G-1497)' haga uso de materiales (fotos/videos) con su imagen, así como de la información derivada de los días de taller. Ninguna información privada o sensible será utilizada ni compartida fuera del marco del proyecto. Muchas gracias."* (Ver listas en el anexo 1)
 
 Posteriormente a la información de la lista y consentimiento, se invitó a cada participante a presentarse brevemente con su nombre e institución.
 
@@ -38,19 +38,19 @@ El Dr. Pérez Maqueo desarrolló una presentación en torno a la pregunta ¿por 
 
 Visión integral
 
-·       Caso particular de las costas
+o       Caso particular de las costas
 
-·       Desarrollo de habilidades
+o       Desarrollo de habilidades
 
 ¿Cómo sugerimos hacerlo?
 
-·       Co-construcción
+o       Co-construcción
 
-·       Ciencia Abierta y principios FAIR
+o       Ciencia Abierta y principios FAIR
 
-·       Análisis con base en propuesta del SEEA EA
+o       Análisis con base en propuesta del SEEA EA
 
-·       Flujos de trabajo (pipelines)
+o       Flujos de trabajo (pipelines)
 
 En esta primera presentación se destacaron algunos argumentos de la necesidad que dio origen al proyecto:
 
@@ -72,7 +72,7 @@ Las presentaciones están disponibles en el blog donde se subirán los materiale
 
 En la segunda parte de la mañana del día 1, se expusieron las generalidades del proyecto, el marco conceptual, los compromisos establecidos para las tres etapas del proyecto, presupuesto, avances y tiempos estimados.
 
-El objetivo principal del proyecto es \"integrar indicadores bióticos y abióticos en un índice de integridad ecosistémica, a través de un modelo causal bajo una aproximación de Inteligencia Artificial Interpretable (IAI)\":
+El objetivo principal del proyecto es "integrar indicadores bióticos y abióticos en un índice de integridad ecosistémica, a través de un modelo causal bajo una aproximación de Inteligencia Artificial Interpretable (IAI)":
 
 o  Nacional
 
