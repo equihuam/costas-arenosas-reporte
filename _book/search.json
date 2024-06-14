@@ -1,10 +1,13 @@
 [
   {
-    "objectID": "capitulos/taller.html#bibliography-references.bib",
-    "href": "capitulos/taller.html#bibliography-references.bib",
-    "title": "5  Taller",
-    "section": "5.1 bibliography: references.bib",
-    "text": "5.1 bibliography: references.bib\n(Harper2022?)"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina",
+    "section": "",
+    "text": "Preface\nEste es el documento de registro de avances del proyecto Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "capitulos/summary.html",
@@ -24,6 +27,16 @@
     "text": "El proyecto Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina se propone generar estimaciones de la condición en la que se encuentran los ecosistemas costeros, especialmente los arenosos, del país con una representación raster y resolución geográfica de pixeles de 3 segundos (aproximadamente 100 m). También se está considerando tener una valoración de mayor resolución para la zona costera de Quintana Roo, en donde se propone lograr una resolución geográfica con pixeles 0.3 segundos.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción</span>"
+    ]
+  },
+  {
+    "objectID": "capitulos/miro-costas.html",
+    "href": "capitulos/miro-costas.html",
+    "title": "3  Datos",
+    "section": "",
+    "text": "3.1 Agenda\nLa reunión de inició del proyecto (CF-2023-G-1497):\nSe realizó del miércoles 29 al viernes 31 de mayo de 2024.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Datos</span>"
     ]
   },
   {
@@ -47,54 +60,13 @@
     ]
   },
   {
-    "objectID": "capitulos/cap1/Chapter-1.html",
-    "href": "capitulos/cap1/Chapter-1.html",
-    "title": "4  Chapter 2",
-    "section": "",
-<<<<<<< HEAD
-    "text": "Something very interesting.\nTabla ejemplo\n\n\n\n \n\n\n\nTabla 4.1: My Caption\n\n\nCol1\nAsunto\n\n\n\n\nContenido\n1\n\n\nEjemplo\n3\n\n\nFin\n4\n\n\n\n\n\n \n\n\n\nSee Tabla 4.1.\n\n\n\nCaption"
-  },
-  {
-    "objectID": "capitulos/divulgacion.html",
-    "href": "capitulos/divulgacion.html",
-    "title": "6  Divulgación",
-    "section": "",
-    "text": "El producto “Un”artículo de divulgación en revista de distribución internacional sobre la importancia de las costas arenosas de México” se publicó en la revista Eco-logico."
-=======
-    "text": "Something very interesting.\nTabla ejemplo\n\n\n\n\n\n\n \n\n\n\n\n\nTabla 4.1: My Caption\n\n\n\n\n\nCol1\nAsunto\n\n\n\n\nContenido\n1\n\n\nEjemplo\n3\n\n\nFin\n4\n\n\n\n\n\n\n\n\n \n\n\n\nSee Tabla 4.1.\n\n\n\nCaption",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Chapter 2</span>"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina",
-    "section": "",
-    "text": "Preface\nEste es el documento de registro de avances del proyecto Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina",
-    "crumbs": [
-      "Preface"
-    ]
-  },
-  {
-    "objectID": "capitulos/miro-costas.html",
-    "href": "capitulos/miro-costas.html",
-    "title": "3  Datos",
-    "section": "",
-    "text": "3.1 Agenda\nLa reunión de inició del proyecto (CF-2023-G-1497):\nSe realizó del miércoles 29 al viernes 31 de mayo de 2024.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Datos</span>"
-    ]
-  },
-  {
     "objectID": "capitulos/taller.html",
     "href": "capitulos/taller.html",
-    "title": "5  Taller",
+    "title": "4  Taller",
     "section": "",
-    "text": "5.1 bibliography: references.bib",
+    "text": "Taller de arranque del grupo de trabajo para unificar metodologías y determinar las variables a analizar\nLugar: Edificio 17 del Instituto de Ingeniería CEMIE-Oceano, ciudad de México / en línea\nObjetivo general:\nPresentar la visión integral del proyecto, su origen, fundamentos teórico-metodológico y principios de ciencia abierta, para unificar criterios técnicos entre el grupo central de trabajo e identificar en conjunto las variables potenciales para los ejercicios de modelación.\nObjetivos particulares:\n\nPresentar el proyecto, sus etapas, los productos comprometidos y tiempos estimados.\nPresentar las bases teórico-metodológicas del proyecto (redes bayesianas), así como los fundamentos de ciencia abierta (FAIR).\nIdentificar posibles variables a utilizar en el modelaje del proyecto, así como las fuentes de datos e información relevante en dos escalas (para el nivel nacional y un caso de estudio potencial a detalle en la Península de Yucatán).\n\nDescripción de las actividades\nLos talleres realizados el 29 y 31 de mayo contaron con la participación de 14 personas que conforman el grupo núcleo de trabajo del proyecto (ocho mujeres y seis hombres, tres participando en línea), provenientes del Instituto de Ingeniería de la UNAM, el Instituto de Ecología A. C. y la UAM – Xochimilco. Las listas de participantes se encuentran en este Archivo.\nEl taller se realizó con un enfoque participativo, para lo cual, se preparó un pizarrón digital (plataforma Miro) y las presentaciones depositadas en el blog de trabajo para el proyecto. El instrumento de planeación del taller (carta descriptiva) con la propuesta de actividades detalladas se encuentra en el anexo 2.\nA continuación, se presentan la descripción del desarrollo de las actividades durante los tres días de trabajo.\nDía 1.\n\nBienvenida y presentación\n\nAl inicio del taller, el Dr. Octavio Pérez Maqueo dio una breve bienvenida al taller e informó que cada día se iba a pasar una lista de asistencia; además, se le pidió a cada persona señalar si brindaban su consentimiento libre e informado para el uso de imagen e información considerando la siguiente leyenda: “Al marcar esta celda, usted da el consentimiento para que el proyecto ‘Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina (CF-2023-G-1497)’ haga uso de materiales (fotos/videos) con su imagen, así como de la información derivada de los días de taller. Ninguna información privada o sensible será utilizada ni compartida fuera del marco del proyecto. Muchas gracias.” (Ver listas en el anexo 1)\nPosteriormente a la información de la lista y consentimiento, se invitó a cada participante a presentarse brevemente con su nombre e institución.\n2. Presentación del contexto y origen del proyecto\nEl Dr. Pérez Maqueo desarrolló una presentación en torno a la pregunta ¿por qué creemos que es necesario un proyecto como este? Para ello, la exposición contó con los siguientes componentes:\nVisión integral\n\nCaso particular de las costas\nDesarrollo de habilidades\n\n¿Cómo sugerimos hacerlo?\n\nCo-construcción\nCiencia Abierta y principios FAIR\nAnálisis con base en propuesta del SEEA EA\nFlujos de trabajo (pipelines)\n\nEn esta primera presentación se destacaron algunos argumentos de la necesidad que dio origen al proyecto:\n\nFortalecer iniciativas nacionales e internacionales que vemos como una alternativa viable hacia la sustentabilidad.\nDesarrollar metodologías que nos permitan a nosotros u otras personas rehacer mañana el análisis que hicimos hoy.\nAprender sobre nuevas formas de análisis dada la capacidad de datos y cómputo actuales.\nAnalizar a los socioecosistemas de manera integral incorporando las dependencias espaciales que caracteriza a estos sistemas.\nImplementar los resultados del proyecto en la toma de decisiones.\n\nLas presentaciones están disponibles en el blog donde se subirán los materiales del proyecto: \nhttps://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n\n\nDescripción del proyecto y marco teórico\n\nEn la segunda parte de la mañana del día 1, se expusieron las generalidades del proyecto, el marco conceptual, los compromisos establecidos para las tres etapas del proyecto, presupuesto, avances y tiempos estimados.\nEl objetivo principal del proyecto es “integrar indicadores bióticos y abióticos en un índice de integridad ecosistémica, a través de un modelo causal bajo una aproximación de Inteligencia Artificial Interpretable (IAI)”:\n\nNacional\nIncorporar la complejidad asociada a ecosistemas costeros\nAprendizaje Automático Interpretable (redes bayesianas)\n\nEl resultado principal es proponer una metodología para analizar la integridad ecosistémica de las costas arenosas de México, con el fin de incorporarla a las cuentas nacionales de ecosistemas y promover su uso en distintos instrumentos de política pública.\nLa entrega de la primera etapa del proyecto es el día 27 de junio de 2024, por lo que dentro de los acuerdos se establecieron las tareas y responsables para cumplir plenamente con los compromisos (ver tabla de acuerdos, anexo 3).\nPosteriormente, el Dr. Miguel Equihua brindó un panorama de los fundamentos teóricos en los que se sustenta el proyecto, principalmente explicando el proceso de análisis de interdependencias condicionadas a partir de las redes bayesianas (directed acyclic graph- DAG) (ver blog):\nEn la presentación se destacó la importancia de hacer la ciencia reproducible, lo que es un DAG, su anatomía, la terminología básica (noto, arista, variable explicativa, respuesta, ancestros, descendientes), las reglas de independencia condicional y la separación condicional. Después del planteamiento teórico, se explicó cómo se busca construir el DAG de integridad costera. Finalmente se presentó el fundamento de la ciencia abierta y los principios FAIR.\nDe esta manera, las/os participantes reconocieron las bases del proyecto y su propuesta de desarrollo. Al terminar la exposición hubo un breve espacio para algunas dudas o inquietudes, incluyendo a las personas que atendieron en línea.\n\nPresentación de la estrategia metodológica\n\nLa siguiente presentación buscó que el grupo cuente con la información base de la estrategia metodológica del taller, la cual sirvió también para realizar el ejercicio planeado para el día 2 de trabajo, en el cual se identificaron las variables y fuentes de información. La presentación contó con los siguientes elementos:\n\nDe lo conceptual a lo analítico (de Miro a Nética)\nEnfoque causal y probabilístico\nDocumentación y gestión de datos\n\nA lo largo del día se plantearon diversas inquietudes, por ejemplo:\n\nDefinir las fronteras del área de estudio.\nDefinir si el grupo estaba en posibilidades de un estudio de caso a profundidad en la Península de Yucatán.\nConsiderar si se considerará información de la cuenca a nivel superficial y/o a los acuíferos.\nDefinir la temporalidad, qué años y si se toman las dos temporadas para las costas.\nNecesidad de llegar a las resoluciones espaciales para la información a nivel nacional y para un estudio de caso.\n\nAdemás, se enlistó la información que podría ser relevante y algunas fuentes de datos que debían retomarse:\n\nLas imágenes que se usaron para el inventario de humedales, que tiene imágenes desde el 75 u 83 y del 2005-2006. Consultar a CONABIO.\nLas imágenes de los vuelos que tiene INEGI y/o SEMARNAT.\nBiblioteca de imágenes de ICA, donde incluso se cuenta con vuelos de los años sesenta (aerofotos).\nAcervo de la compañía mexicana de aerofoto, que se había depositado en el Instituto de Geografía-UNAM, sin embargo, como no estaban cuidados los rollos, ICA se los llevo. Los tiene la Fundación ICA.\nLas fotografías aéreas más antiguas que tomaron los EE. UU., las cuales están escaneadas. El equipo de Rodolfo Silva tiene acceso a esta información. Una parte ya está digitalizada, pero no toda está organizada, hay mucho trabajo pendiente.\nInformación de la CFE.\nLas cartas geológico-mineras de todo el país. Los tiene el servicio geológico mexicano\n\nEl equipo facilitador tomó notas cada día de trabajo de estos puntos para llegar a definiciones en una tabla de acuerdos al final del taller (ver anexo 3).\nAl final del día 1, se dio un espacio en plenaria de cierre de la jornada de trabajo y se propusieron los mecanismos de interacción para el día 2.\nDía 2\n\nPresentación del tema gestión de datos y presentación de variables\n\nAl inicio del día 2, se continuó con el tema de gestión de datos y se presentaron las temáticas de variables existentes y nuevas variables, así como las sugerencias para documentar y gestionar datos en el marco del proyecto.\nPosteriormente se brindó un ejemplo de variables y sus interacciones. De esta manera, el grupo conoció la metodología específica para definir variables e interacciones.\n\n°°Ejercicio participativo de identificación de variables**\n\n\nMecánica del ejercicio:\n\nUna vez que se introdujo al grupo de trabajo a la metodología de identificación de variables, se realizó un ejercicio donde el grupo participó a través de notas digitales tipo post-it en un pizarrón digital en la plataforma Miro (ver Fig. 1). Para esto, el equipo facilitador había preparado previamente el pizarrón de trabajo, se propusieron variables que ya se habían identificado, además de presentar el ejemplo de un caso que se desarrolló en un proyecto previo. \n\nDefinir los parámetros técnicos para el intercambio de información entre el equipo de trabajo (resolución, formato, metadatos, etc.).\n\nResultados generados:\n\nMural digital con la lista de variables potenciales identificada por el grupo de trabajo, la cual incluye fuente de datos, la escala de información y la persona que propuso la variable y que podría gestionar el acceso a la información.\nLista de fuentes de información adicionales que puedan servir como insumo para el modelaje.\nTabla de acuerdos con tareas y responsables para la siguiente fase del proyecto.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Taller</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Taller</span>"
     ]
->>>>>>> 4f02ab858ca3bcfda7957723b88ba5a5a97a986a
   }
 ]
