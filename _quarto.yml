@@ -51,13 +51,14 @@ format:
     theme: materia
   pdf:
     papersize: letter
+    prefer-html: true
     documentclass: scrreprt
     cite-method: citeproc
-    prefer-html: true
+
   epub:
     papersize: letter
-    cover-image: images/landscape-546343_1280.jpg
     prefer-html: true
+    cover-image: images/landscape-546343_1280.jpg
 
 execute: 
   freeze: true
