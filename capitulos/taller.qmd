@@ -17,7 +17,7 @@ Presentar la visión integral del proyecto, su origen, fundamentos teórico-meto
 
 **Descripción de las actividades**
 
-Los talleres realizados el 29 y 31 de mayo contaron con la participación de 14 personas que conforman el grupo núcleo de trabajo del proyecto (ocho mujeres y seis hombres, tres participando en línea), provenientes del Instituto de Ingeniería de la UNAM, el Instituto de Ecología A. C. y la UAM -- Xochimilco. Las listas de participantes se encuentran en este  [Archivo](Taller/Anexo%201%20Lista%20de%20participantes.pdf).
+Los talleres realizados el 29 y 31 de mayo contaron con la participación de 14 personas que conforman el grupo núcleo de trabajo del proyecto (ocho mujeres y seis hombres, tres participando en línea), provenientes del Instituto de Ingeniería de la UNAM, el Instituto de Ecología A. C. y la UAM -- Xochimilco. Las listas de participantes se encuentran en este  [Archivo](Taller/Anexo-1.pdf).
 
 
 El taller se realizó con un enfoque participativo, para lo cual, se preparó un [pizarrón digital](https://miro.com/welcomeonboard/ckhlZ3lXY1djM0FXd3ZIZmlpV3FUVXFONGJsUFJ0NGFIaWw0eGdHOHBDalhDdFk1Zjg1MUVOZTNMUmZaNDhPVHwzMDc0NDU3MzUyMDM4MTIwMjcwfDI=?share_link_id=865983900620) (plataforma Miro) y las presentaciones depositadas en el [blog de trabajo para el proyecto](https://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n). El instrumento de planeación del taller (carta descriptiva) con la propuesta de actividades detalladas se encuentra en el anexo 2.
@@ -65,9 +65,8 @@ En esta primera presentación se destacaron algunos argumentos de la necesidad q
 - Implementar los resultados del proyecto en la toma de decisiones.
 
 
-Las presentaciones están disponibles en el blog donde se subirán los materiales del proyecto: 
-
-<https://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n>
+Las presentaciones están disponibles en el blog donde se subirán los materiales del proyecto:
+[https://sw-costas-arenosas.netlify.app/presentaciones](https://sw-costas-arenosas.netlify.app/presentaciones)
 
 3. **Descripción del proyecto y marco teórico**
 
@@ -85,7 +84,7 @@ El resultado principal es proponer una metodología para analizar la integridad 
 
 La entrega de la primera etapa del proyecto es el día 27 de junio de 2024, por lo que dentro de los acuerdos se establecieron las tareas y responsables para cumplir plenamente con los compromisos (ver tabla de acuerdos, anexo 3).
 
-Posteriormente, el Dr. Miguel Equihua brindó un panorama de los fundamentos teóricos en los que se sustenta el proyecto, principalmente explicando el proceso de análisis de interdependencias condicionadas a partir de las redes bayesianas (directed acyclic graph- DAG) (ver [blog](https://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n)):
+Posteriormente, el Dr. Miguel Equihua brindó un panorama de los fundamentos teóricos en los que se sustenta el proyecto, principalmente explicando el proceso de análisis de interdependencias condicionadas a partir de las redes bayesianas (directed acyclic graph- DAG) (ver [blog](https://sw-costas-arenosas.netlify.app/presentaciones):
 
 En la presentación se destacó la importancia de hacer la ciencia reproducible, lo que es un DAG, su anatomía, la terminología básica (noto, arista, variable explicativa, respuesta, ancestros, descendientes), las reglas de independencia condicional y la separación condicional. Después del planteamiento teórico, se explicó cómo se busca construir el DAG de integridad costera. Finalmente se presentó el fundamento de la ciencia abierta y los principios FAIR.
 
@@ -142,7 +141,7 @@ Al inicio del día 2, se continuó con el tema de gestión de datos y se present
 
 Posteriormente se brindó un ejemplo de variables y sus interacciones. De esta manera, el grupo conoció la metodología específica para definir variables e interacciones.
 
-6. °°Ejercicio participativo de identificación de variables**
+6. **Ejercicio participativo de identificación de variables**
 
 a) Mecánica del ejercicio:
 

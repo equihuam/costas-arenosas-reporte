@@ -4,7 +4,7 @@ comments:
 ---
 # Datos
 
-![](images/fisiografía.png)
+![](images/fisiografia.png)
 
 [Characterization of Surface Evidence of Groundwater Flow Systems](https://www.mdpi.com/2073-4441/12/9/2459)
 
@@ -92,7 +92,7 @@ cat(plan_txt)
 La propuesta que hacemos es usar *Miro* como plataforma de debate y construcción de consenso. 
 Buscamos así aproximarnos a la estructura causal que vincula las variables que determinan el rendimiento y la sustentabilidad (social, económica y ambiental). Una vez resuelta esta etapa, es necesario transferir lo acordado en *Miro* a plataformas de análisis estadístico. Aquí, nos propusimos trasladar los resultados de *Miro* a *R*. Al hacer esto las posibilidades analíticas se potencian muy ampliamente. Como veremos, podemos recurrir a `dagitty` o incluso utilizar *Python* y *Netica*. 
 
-![](Images/colaboración.png)
+![](Images/colaboracion.png)
 :::
 
 Hemos preparado una biblioteca con las rutinas necesarias para transferir lo trabajado en **Miro** (básicamente desarrollo conceptual) a **R**  en donde se podrá  continuar con el desarrollo formal del modelo según se requiera, cualitativa y cuantitativamente. Para instalarla y usarla hay que seguir las [indicaciones que se describen aquí](https://github.com/equihuam/miro2bayesNet). Consideren que para usarla habrá que hacer algunas preparaciones para interactuar con **Miro**. Se trata básicamente de tener los permisos de acceso. Habrá que obtener credenciales en la forma de un *token*, el cual hay que evitar distribuir. Por lo tanto, para operar hemos recurrido a la biblioteca `keyring` para mantenerlas confidenciales. Esta biblioteca permite utilizar el sistema de seguridad del equipo para la gestión de las claves. Para dar de alta una llave utiliza la instrucción de registro `key_set`, necesitarás dos identificadores de tu preferencia que deberán ir entrecomillados:
