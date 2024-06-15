@@ -10,7 +10,7 @@ citation:
   type: book
 
 book:
-  title: "Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina"
+  title: "Integridad ecosistémica de costas arenosas"
   subtitle: "Proyecto Conahcyt de ciencia de frontera (CF-2023-G-1497)"
   
   downloads: [pdf, epub]
@@ -41,17 +41,22 @@ book:
     - index.qmd
     - capitulos/summary.qmd
     - capitulos/intro.qmd
-    - capitulos/miro-costas.qmd
     - capitulos/taller.qmd
+    - capitulos/miro-costas.qmd
     - capitulos/references.qmd
-    
 css: costas.css
 
 format:
   html:
     theme: materia
   pdf:
+    papersize: letter
     documentclass: scrreprt
+    cite-method: citeproc
+    prefer-html: true
+  epub:
+    papersize: letter
+    cover-image: images/landscape-546343_1280.jpg
     prefer-html: true
 
 execute: 

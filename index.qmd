@@ -1,3 +1,7 @@
 # Preface {.unnumbered}
 
-Este es el documento de registro de avances del proyecto **Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina**
+Este es el documento de registro de avances del proyecto
+
+***Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina***
+
+[@Pérez-Maqueo2013]
