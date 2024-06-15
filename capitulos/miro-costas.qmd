@@ -1,6 +1,8 @@
 ---
 comments:
   hypothesis: true
+editor_options: 
+  chunk_output_type: console
 ---
 # Datos
 
@@ -143,8 +145,9 @@ variables <- tibble(var = datos_miro$nodes$var)
 
 
 
-
 ```{r}
+#|label: dag
+
 graphviz.plot(netMiro_bn, layout = "dot")
 
 ```
@@ -156,8 +159,7 @@ La lista de variables identificadas es:
 #| label: lista_vars
 #| echo: false
 
-
-datos_miro$nodes %>% 
+datos_miro$nodes %>%   
   select(text, var, color) %>% 
   flextable() %>% 
   fontsize(size = 8, part = "header") %>% 

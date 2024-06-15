@@ -13,7 +13,7 @@ book:
   title: "Integridad ecosistémica de costas arenosas"
   subtitle: "Proyecto Conahcyt de ciencia de frontera (CF-2023-G-1497)"
   
-  downloads: [pdf, epub]
+  downloads: [pdf]
   favicon: images/plecas_Página_7.png
 
   sidebar: 
@@ -54,11 +54,7 @@ format:
     prefer-html: true
     documentclass: scrreprt
     cite-method: citeproc
-
-  epub:
-    papersize: letter
-    prefer-html: true
-    cover-image: images/landscape-546343_1280.jpg
+    citation: true
 
 execute: 
   freeze: true
