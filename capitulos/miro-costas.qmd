@@ -159,9 +159,40 @@ La lista de variables identificadas es:
 #| label: lista_vars
 #| echo: false
 
+datos_miro$nodes$text <- stringr::str_replace(datos_miro$nodes$text, pattern = "http", 
+                                              replacement = "\nhttp")
+datos_miro$nodes$text <- stringr::str_replace(datos_miro$nodes$text, 
+                                              pattern = "(?<=[a-z])([A-Z])", 
+                                              replacement = " \\1")
+datos_miro$nodes$text <- stringr::str_replace(datos_miro$nodes$text, 
+                                              pattern = "Suelos sueltos", 
+                                              replacement = "\nSuelos sueltos")
+datos_miro$nodes$text <- stringr::str_replace(datos_miro$nodes$text, 
+                                              pattern = "VALERIA", 
+                                              replacement = "\n- VALERIA\n")
+datos_miro$nodes$text <- stringr::str_replace(datos_miro$nodes$text, 
+                                              pattern = "Eventos de vientos extremos.", 
+                                              replacement = "\nSuelos sueltos")
+datos_miro$nodes$text <- stringr::str_replace(datos_miro$nodes$text, 
+                                              pattern = "segundos\\)En versión", 
+                                              replacement = "segundos)\nEn versión")
+datos_miro$nodes$text <- stringr::str_replace(datos_miro$nodes$text, 
+                                              pattern = '&#34;', 
+                                              replacement = '\\" ')
+datos_miro$nodes$text <- stringr::str_replace(datos_miro$nodes$text, 
+                                              pattern = "&#43;\\)", 
+                                              replacement = " \\+ ")
+datos_miro$nodes$text <- stringr::str_replace(datos_miro$nodes$text, 
+                                              pattern = "arrastre\\?WB", 
+                                              replacement = "arrastre\\?\nWB")
+
+
 datos_miro$nodes %>%   
   select(text, var, color) %>% 
   flextable() %>% 
+  width(j=1, width = 12, unit = "cm") %>% 
+  width(j=2:3, width = 2, unit = "cm") %>% 
+  padding(j = 1, padding.right = 50) %>% 
   fontsize(size = 8, part = "header") %>% 
   fontsize(size = 8)
 
