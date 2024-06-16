@@ -49,12 +49,38 @@ css: costas.css
 format:
   html:
     theme: materia
-  pdf:
+  titlepage-pdf:
+    titlepage: bg-image
     papersize: letter
     prefer-html: true
-    documentclass: scrreprt
+    documentclass: scrbook
     cite-method: citeproc
     citation: true
+    coverpage: true
+    coverpage-bg-image: "images/landscape-546343_1280.jpg"
+    coverpage-title: "Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina"
+    coverpage-footer: "Proyecto Conahcyt de ciencia de frontera (CF-2023-G-1497)"
+    coverpage-author: ["Octavio Pérez Maqueo", "Miguel Equihua Zamora"]
+    coverpage-theme:
+      page-html-color: "F6D5A8"
+      title-fontfamily: "QTDublinIrish.otf"
+      title-fontsize: 36
+      title-align: "right"
+      title-bottom: "10in"
+      author-style: "plain"
+      author-sep: "newline"
+      author-fontstyle: "textsc"
+      author-fontsize: 14
+      author-align: "right"
+      author-bottom: "4in"  
+      header-style: "none"
+      footer-fontsize: 16
+      footer-fontfamily: "QTDublinIrish.otf"
+      footer-align: "right"
+      footer-color: "white"
+      footer-bottom: "3in"
+      date-style: "none"
+      bg-image-fading: "north"
 
 execute: 
   freeze: true
