@@ -42,7 +42,6 @@ book:
     - capitulos/summary.qmd
     - capitulos/intro.qmd
     - capitulos/taller.qmd
-    - capitulos/miro-costas.qmd
     - capitulos/references.qmd
 css: costas.css
 

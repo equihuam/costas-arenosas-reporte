@@ -159,6 +159,7 @@ La lista de variables identificadas es:
 #| label: lista_vars
 #| echo: false
 
+# Arregla algunos problemas de la lectura del texto de las notas en Miro 
 datos_miro$nodes <- 
   datos_miro$nodes %>%
   select(text, var, color) %>% 

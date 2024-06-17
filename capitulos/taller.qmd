@@ -10,23 +10,21 @@ Presentar la visión integral del proyecto, su origen, fundamentos teórico-meto
 
 **Objetivos particulares:**
 
-1. Presentar el proyecto, sus etapas, los productos comprometidos y tiempos estimados.
-2. Presentar las bases teórico-metodológicas del proyecto (redes bayesianas), así como los fundamentos de ciencia abierta (FAIR).
-3. Identificar posibles variables a utilizar en el modelaje del proyecto, así como las fuentes de datos e información relevante en dos escalas (para el nivel nacional y un caso de estudio potencial a detalle en la Península de Yucatán).
-
+1.  Presentar el proyecto, sus etapas, los productos comprometidos y tiempos estimados.
+2.  Presentar las bases teórico-metodológicas del proyecto (redes bayesianas), así como los fundamentos de ciencia abierta (FAIR).
+3.  Identificar posibles variables a utilizar en el modelaje del proyecto, así como las fuentes de datos e información relevante en dos escalas (para el nivel nacional y un caso de estudio potencial a detalle en la Península de Yucatán).
 
 **Descripción de las actividades**
 
-Los talleres realizados el 29 y 31 de mayo contaron con la participación de 14 personas que conforman el grupo núcleo de trabajo del proyecto (ocho mujeres y seis hombres, tres participando en línea), provenientes del Instituto de Ingeniería de la UNAM, el Instituto de Ecología A. C. y la UAM -- Xochimilco. Las listas de participantes se encuentran en este  [Archivo](Taller/Anexo-1.pdf).
+Los talleres realizados el 29 y 31 de mayo contaron con la participación de 14 personas que conforman el grupo núcleo de trabajo del proyecto (ocho mujeres y seis hombres, tres participando en línea), provenientes del Instituto de Ingeniería de la UNAM, el Instituto de Ecología A. C. y la UAM -- Xochimilco. Las listas de participantes se encuentran en este [Archivo](Taller/Anexo-1.pdf).
 
-
-El taller se realizó con un enfoque participativo, para lo cual, se preparó un [pizarrón digital](https://miro.com/welcomeonboard/ckhlZ3lXY1djM0FXd3ZIZmlpV3FUVXFONGJsUFJ0NGFIaWw0eGdHOHBDalhDdFk1Zjg1MUVOZTNMUmZaNDhPVHwzMDc0NDU3MzUyMDM4MTIwMjcwfDI=?share_link_id=865983900620) (plataforma Miro) y las presentaciones depositadas en el [blog de trabajo para el proyecto](https://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n). El instrumento de planeación del taller (carta descriptiva) con la propuesta de actividades detalladas se encuentra en el anexo 2.
+El taller se realizó con un enfoque participativo, para lo cual, se preparó un [pizarrón digital en la plataforma virtual **Miro**](https://miro.com/welcomeonboard/ckhlZ3lXY1djM0FXd3ZIZmlpV3FUVXFONGJsUFJ0NGFIaWw0eGdHOHBDalhDdFk1Zjg1MUVOZTNMUmZaNDhPVHwzMDc0NDU3MzUyMDM4MTIwMjcwfDI=?share_link_id=865983900620) y las presentaciones fueron depositadas en el [sitio Web de trabajo para el proyecto](https://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n). El instrumento de planeación del taller (carta descriptiva) con la propuesta de actividades detalladas se encuentra en el anexo 2.
 
 A continuación, se presentan la descripción del desarrollo de las actividades durante los tres días de trabajo.
 
-**Día 1.**
+## Día 1
 
-1. **Bienvenida y presentación**
+1.  **Bienvenida y presentación**
 
 Al inicio del taller, el Dr. Octavio Pérez Maqueo dio una breve bienvenida al taller e informó que cada día se iba a pasar una lista de asistencia; además, se le pidió a cada persona señalar si brindaban su consentimiento libre e informado para el uso de imagen e información considerando la siguiente leyenda: *"Al marcar esta celda, usted da el consentimiento para que el proyecto 'Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina (CF-2023-G-1497)' haga uso de materiales (fotos/videos) con su imagen, así como de la información derivada de los días de taller. Ninguna información privada o sensible será utilizada ni compartida fuera del marco del proyecto. Muchas gracias."* (Ver listas en el anexo 1)
 
@@ -38,122 +36,214 @@ El Dr. Pérez Maqueo desarrolló una presentación en torno a la pregunta ¿por 
 
 Visión integral
 
-- Caso particular de las costas
+-   Caso particular de las costas
 
-- Desarrollo de habilidades
+-   Desarrollo de habilidades
 
 ¿Cómo sugerimos hacerlo?
 
-- Co-construcción
+-   Co-construcción
 
-- Ciencia Abierta y principios FAIR
+-   Ciencia Abierta y principios FAIR
 
-- Análisis con base en propuesta del SEEA EA
+-   Análisis con base en propuesta del SEEA EA
 
-- Flujos de trabajo (pipelines)
+-   Flujos de trabajo (pipelines)
 
 En esta primera presentación se destacaron algunos argumentos de la necesidad que dio origen al proyecto:
 
-- Fortalecer iniciativas nacionales e internacionales que vemos como una alternativa viable hacia la sustentabilidad.
+-   Fortalecer iniciativas nacionales e internacionales que vemos como una alternativa viable hacia la sustentabilidad.
 
-- Desarrollar metodologías que nos permitan a nosotros u otras personas rehacer mañana el análisis que hicimos hoy.
+-   Desarrollar metodologías que nos permitan a nosotros u otras personas rehacer mañana el análisis que hicimos hoy.
 
-- Aprender sobre nuevas formas de análisis dada la capacidad de datos y cómputo actuales.
+-   Aprender sobre nuevas formas de análisis dada la capacidad de datos y cómputo actuales.
 
-- Analizar a los socioecosistemas de manera integral incorporando las dependencias espaciales que caracteriza a estos sistemas.
+-   Analizar a los socioecosistemas de manera integral incorporando las dependencias espaciales que caracteriza a estos sistemas.
 
-- Implementar los resultados del proyecto en la toma de decisiones.
+-   Implementar los resultados del proyecto en la toma de decisiones.
 
+Las presentaciones están disponibles en el blog donde se subirán los materiales del proyecto: <https://sw-costas-arenosas.netlify.app/presentaciones>
 
-Las presentaciones están disponibles en el blog donde se subirán los materiales del proyecto:
-[https://sw-costas-arenosas.netlify.app/presentaciones](https://sw-costas-arenosas.netlify.app/presentaciones)
-
-3. **Descripción del proyecto y marco teórico**
+3.  **Descripción del proyecto y marco teórico**
 
 En la segunda parte de la mañana del día 1, se expusieron las generalidades del proyecto, el marco conceptual, los compromisos establecidos para las tres etapas del proyecto, presupuesto, avances y tiempos estimados.
 
 El objetivo principal del proyecto es "integrar indicadores bióticos y abióticos en un índice de integridad ecosistémica, a través de un modelo causal bajo una aproximación de Inteligencia Artificial Interpretable (IAI)":
 
-- Nacional
+-   Nacional
 
-- Incorporar la complejidad asociada a ecosistemas costeros
+-   Incorporar la complejidad asociada a ecosistemas costeros
 
-- Aprendizaje Automático Interpretable (redes bayesianas)
+-   Aprendizaje Automático Interpretable (redes bayesianas)
 
 El resultado principal es proponer una metodología para analizar la integridad ecosistémica de las costas arenosas de México, con el fin de incorporarla a las cuentas nacionales de ecosistemas y promover su uso en distintos instrumentos de política pública.
 
 La entrega de la primera etapa del proyecto es el día 27 de junio de 2024, por lo que dentro de los acuerdos se establecieron las tareas y responsables para cumplir plenamente con los compromisos (ver tabla de acuerdos, anexo 3).
 
-Posteriormente, el Dr. Miguel Equihua brindó un panorama de los fundamentos teóricos en los que se sustenta el proyecto, principalmente explicando el proceso de análisis de interdependencias condicionadas a partir de las redes bayesianas (directed acyclic graph- DAG) (ver [blog](https://sw-costas-arenosas.netlify.app/presentaciones):
+Posteriormente, el Dr. Miguel Equihua brindó un panorama de los fundamentos teóricos en los que se sustenta el proyecto, principalmente explicando el proceso de análisis de interdependencias condicionadas a partir de las redes bayesianas (directed acyclic graph- DAG sensu [@pearl2018book]) (ver [blog](https://sw-costas-arenosas.netlify.app/presentaciones):
 
 En la presentación se destacó la importancia de hacer la ciencia reproducible, lo que es un DAG, su anatomía, la terminología básica (noto, arista, variable explicativa, respuesta, ancestros, descendientes), las reglas de independencia condicional y la separación condicional. Después del planteamiento teórico, se explicó cómo se busca construir el DAG de integridad costera. Finalmente se presentó el fundamento de la ciencia abierta y los principios FAIR.
 
 De esta manera, las/os participantes reconocieron las bases del proyecto y su propuesta de desarrollo. Al terminar la exposición hubo un breve espacio para algunas dudas o inquietudes, incluyendo a las personas que atendieron en línea.
 
-4. **Presentación de la estrategia metodológica**
+4.  **Presentación de la estrategia metodológica**
 
 La siguiente presentación buscó que el grupo cuente con la información base de la estrategia metodológica del taller, la cual sirvió también para realizar el ejercicio planeado para el día 2 de trabajo, en el cual se identificaron las variables y fuentes de información. La presentación contó con los siguientes elementos:
 
-- De lo conceptual a lo analítico (de Miro a Nética)
+-   De lo conceptual a lo analítico (de Miro a Nética)
 
-- Enfoque causal y probabilístico
+-   Enfoque causal y probabilístico
 
-- Documentación y gestión de datos
+-   Documentación y gestión de datos
 
 A lo largo del día se plantearon diversas inquietudes, por ejemplo:
 
-- Definir las fronteras del área de estudio.
+-   Definir las fronteras del área de estudio.
 
-- Definir si el grupo estaba en posibilidades de un estudio de caso a profundidad en la Península de Yucatán.
+-   Definir si el grupo estaba en posibilidades de un estudio de caso a profundidad en la Península de Yucatán.
 
-- Considerar si se considerará información de la cuenca a nivel superficial y/o a los acuíferos.
+-   Considerar si se considerará información de la cuenca a nivel superficial y/o a los acuíferos.
 
-- Definir la temporalidad, qué años y si se toman las dos temporadas para las costas.
+-   Definir la temporalidad, qué años y si se toman las dos temporadas para las costas.
 
-- Necesidad de llegar a las resoluciones espaciales para la información a nivel nacional y para un estudio de caso.
+-   Necesidad de llegar a las resoluciones espaciales para la información a nivel nacional y para un estudio de caso.
 
 Además, se enlistó la información que podría ser relevante y algunas fuentes de datos que debían retomarse:
 
-- Las imágenes que se usaron para el inventario de humedales, que tiene imágenes desde el 75 u 83 y del 2005-2006. Consultar a CONABIO.
+-   Las imágenes que se usaron para el inventario de humedales, que tiene imágenes desde el 75 u 83 y del 2005-2006. Consultar a CONABIO.
 
-- Las imágenes de los vuelos que tiene INEGI y/o SEMARNAT.
+-   Las imágenes de los vuelos que tiene INEGI y/o SEMARNAT.
 
-- Biblioteca de imágenes de ICA, donde incluso se cuenta con vuelos de los años sesenta (aerofotos).
+-   Biblioteca de imágenes de ICA, donde incluso se cuenta con vuelos de los años sesenta (aerofotos).
 
-- Acervo de la compañía mexicana de aerofoto, que se había depositado en el Instituto de Geografía-UNAM, sin embargo, como no estaban cuidados los rollos, ICA se los llevo. Los tiene la Fundación ICA.
+-   Acervo de la compañía mexicana de aerofoto, que se había depositado en el Instituto de Geografía-UNAM, sin embargo, como no estaban cuidados los rollos, ICA se los llevo. Los tiene la Fundación ICA.
 
-- Las fotografías aéreas más antiguas que tomaron los EE. UU., las cuales están escaneadas. El equipo de Rodolfo Silva tiene acceso a esta información. Una parte ya está digitalizada, pero no toda está organizada, hay mucho trabajo pendiente.
+-   Las fotografías aéreas más antiguas que tomaron los EE. UU., las cuales están escaneadas. El equipo de Rodolfo Silva tiene acceso a esta información. Una parte ya está digitalizada, pero no toda está organizada, hay mucho trabajo pendiente.
 
-- Información de la CFE.
+-   Información de la CFE.
 
-- Las cartas geológico-mineras de todo el país. Los tiene el servicio geológico mexicano
-
+-   Las cartas geológico-mineras de todo el país. Los tiene el servicio geológico mexicano
 
 El equipo facilitador tomó notas cada día de trabajo de estos puntos para llegar a definiciones en una tabla de acuerdos al final del taller (ver anexo 3).
 
 Al final del día 1, se dio un espacio en plenaria de cierre de la jornada de trabajo y se propusieron los mecanismos de interacción para el día 2.
 
-**Día 2**
 
-5. **Presentación del tema gestión de datos y presentación de variables**
+## Día 2
+
+5.  **Presentación del tema gestión de datos y presentación de variables**
 
 Al inicio del día 2, se continuó con el tema de gestión de datos y se presentaron las temáticas de variables existentes y nuevas variables, así como las sugerencias para documentar y gestionar datos en el marco del proyecto.
 
 Posteriormente se brindó un ejemplo de variables y sus interacciones. De esta manera, el grupo conoció la metodología específica para definir variables e interacciones.
 
-6. **Ejercicio participativo de identificación de variables**
+6.  **Ejercicio participativo de identificación de variables**
 
-a) Mecánica del ejercicio:
+Construcción colaborativa de Redes Bayesianas
+
+::: {layout-ncol="2"}
+Se explico a propuesta de usar *Miro* como plataforma de debate y construcción de consenso. Buscamos así aproximarnos a la estructura causal que vincula las variables que determinan la condición y la sustentabilidad (social, económica y ambiental). También se explicó que se transferirá lo acordado en *Miro* a la plataformas de análisis estadístico **R**. Al hacer esto las posibilidades analíticas se potencian muy ampliamente y se podrá recurrir a `dagitty` o incluso utilizar *Python* y *Netica* para el análisis, entrenamiento y proyección del modelo resultante que es uno de los objetivos centrales del proyecto. El ciclo de trabajo en esta etapa se ilustra en la siguiente figura.
+
+![](images/colaboracion.png)
+:::
+
+a)  Mecánica del ejercicio:
 
 Una vez que se introdujo al grupo de trabajo a la metodología de identificación de variables, se realizó un ejercicio donde el grupo participó a través de notas digitales tipo post-it en un pizarrón digital en la plataforma Miro (ver Fig. 1). Para esto, el equipo facilitador había preparado previamente el pizarrón de trabajo, se propusieron variables que ya se habían identificado, además de presentar el ejemplo de un caso que se desarrolló en un proyecto previo.
+
 ![](images/Taller_figura_1.png)
 
-4. Definir los parámetros técnicos para el intercambio de información entre el equipo de trabajo (resolución, formato, metadatos, etc.).
+4.  Definir los parámetros técnicos para el intercambio de información entre el equipo de trabajo (resolución, formato, metadatos, etc.).
 
 **Resultados generados:**
 
-1. Mural digital con la lista de variables potenciales identificada por el grupo de trabajo, la cual incluye fuente de datos, la escala de información y la persona que propuso la variable y que podría gestionar el acceso a la información.
+1.  Mural digital con la lista de variables potenciales identificada por el grupo de trabajo, la cual incluye fuente de datos, la escala de información y la persona que propuso la variable y que podría gestionar el acceso a la información.
 
-2. Lista de fuentes de información adicionales que puedan servir como insumo para el modelaje.
+2.  Lista de fuentes de información adicionales que puedan servir como insumo para el modelaje.
 
-3. Tabla de acuerdos con tareas y responsables para la siguiente fase del proyecto.
+3.  Tabla de acuerdos con tareas y responsables para la siguiente fase del proyecto.
+
+A continuación se muestra el avance de lo anotado en **Miro** y el resultado de transferirlo a **R**. En primer lugar se ilustran los atributos generales de lo que se ha definido en **Miro** y que ya ha sido transferido e interpretado en **R** como un DAG.
+
+```{r}
+#| label: Miro_usuario
+#| echo: true
+#| message: false
+#| warning: false
+
+if (!require(miro2bayes))
+{
+  library(devtools)
+  install_github("equihuam/miro2bayesNet", force = TRUE)
+}
+
+library(miro2bayes)
+library(bnlearn)
+library(bnviewer)
+library(tidyverse, quietly = TRUE, warn.conflicts = FALSE)
+library(flextable)
+
+tableros <- miroBoards(servMiro = "miro", user = "miguel-edu-token")
+tableros[, c("name", "id")]
+
+tablero_tr <- tableros %>%
+              filter(str_detect(name, "Costa")) %>%
+              select(id, name)
+
+datos_miro <- getMiro(servMiro = "miro", user = "miguel-edu-token",
+                        board = tablero_tr)
+
+miroValidation(datos_miro)
+
+#neticaMiro <- miro2DNE(datos_miro)
+
+#write(neticaMiro, "costa-arenosa.dne")
+
+netMiro_bn <- miro2bnlearn(datos_miro)
+netMiro_bn
+
+variables <- tibble(var = datos_miro$nodes$var)
+```
+
+Se muestra una ilustración del avance del DAG en la figura siguiente, producida ya en **R**.
+
+```{r}
+#|label: dag
+
+graphviz.plot(netMiro_bn, layout = "dot")
+
+```
+
+Finalmente, se muestra la lista de variables identificadas hasta ahora en las notas reunidas en **Miro** y transferidas a **R**.
+
+```{r}
+#| label: lista_vars
+#| echo: false
+
+datos_miro$nodes <- 
+  datos_miro$nodes %>%
+  select(text, var, color) %>% 
+  mutate(text = stringr::str_replace_all(text, pattern = '&#34;', replacement = '\\"'),
+         text = stringr::str_replace_all(text, pattern = "&#43;", replacement = " \\+ "),
+         text = stringr::str_replace_all(text, pattern = "http", replacement = "\nhttp"),
+         text = stringr::str_replace_all(text, pattern = "(?<=[a-z])([A-Z])", replacement = " \\1"),
+         text = stringr::str_replace_all(text, pattern = "Suelos sueltos", 
+                                         replacement = "\nSuelos sueltos"),
+         text = stringr::str_replace_all(text, pattern = "VALERIA ", replacement = "\n- VALERIA\n"),
+         text = stringr::str_replace_all(text, pattern = "Eventos de vientos extremos.",
+                                         replacement = "\nSuelos sueltos"),
+         text = stringr::str_replace_all(text, pattern = "segundos\\)En versión",
+                                         replacement = "segundos)\nEn versión"),
+         text = stringr::str_replace_all(text, pattern = "arrastre\\?WB", replacement = "arrastre\\?\nWB"))
+
+
+datos_miro$nodes %>%   
+  select(text, var, color) %>% 
+  flextable() %>% 
+  width(j=1, width = 12, unit = "cm") %>% 
+  width(j=2:3, width = 2, unit = "cm") %>% 
+  padding(j = 1, padding.right = 50) %>% 
+  fontsize(size = 8, part = "header") %>% 
+  fontsize(size = 8)
+
+```
