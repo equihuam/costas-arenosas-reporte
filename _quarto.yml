@@ -52,6 +52,12 @@ format:
     titlepage: bg-image
     papersize: letter
     prefer-html: true
+<<<<<<< HEAD
+  epub:
+    cover-image: images/cover.png
+    prefer-html: true
+     
+=======
     documentclass: scrbook
     cite-method: citeproc
     citation: true
@@ -82,6 +88,7 @@ format:
       date-style: "none"
       bg-image-fading: "north"
 
+>>>>>>> 0d1c9a685e0dfa699f1a358c3fe5de14fc5ceac9
 execute: 
   freeze: true
 

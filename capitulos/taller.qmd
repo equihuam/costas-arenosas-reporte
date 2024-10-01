@@ -14,6 +14,7 @@ Presentar la visión integral del proyecto, su origen, fundamentos teórico-meto
 2.  Presentar las bases teórico-metodológicas del proyecto (redes bayesianas), así como los fundamentos de ciencia abierta (FAIR).
 3.  Identificar posibles variables a utilizar en el modelaje del proyecto, así como las fuentes de datos e información relevante en dos escalas (para el nivel nacional y un caso de estudio potencial a detalle en la Península de Yucatán).
 
+
 **Descripción de las actividades**
 
 Los talleres realizados el 29 y 31 de mayo contaron con la participación de 14 personas que conforman el grupo núcleo de trabajo del proyecto (ocho mujeres y seis hombres, tres participando en línea), provenientes del Instituto de Ingeniería de la UNAM, el Instituto de Ecología A. C. y la UAM -- Xochimilco. Las listas de participantes se encuentran en este [Archivo](Taller/Anexo-1.pdf).
@@ -64,7 +65,15 @@ En esta primera presentación se destacaron algunos argumentos de la necesidad q
 
 Las presentaciones están disponibles en el blog donde se subirán los materiales del proyecto: <https://sw-costas-arenosas.netlify.app/presentaciones>
 
+<<<<<<< HEAD
+Las presentaciones están disponibles en el blog donde se subirán los materiales del proyecto: 
+
+[https://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n](https://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n)
+
+3. **Descripción del proyecto y marco teórico**
+=======
 3.  **Descripción del proyecto y marco teórico**
+>>>>>>> 0d1c9a685e0dfa699f1a358c3fe5de14fc5ceac9
 
 En la segunda parte de la mañana del día 1, se expusieron las generalidades del proyecto, el marco conceptual, los compromisos establecidos para las tres etapas del proyecto, presupuesto, avances y tiempos estimados.
 
@@ -137,6 +146,11 @@ Al inicio del día 2, se continuó con el tema de gestión de datos y se present
 
 Posteriormente se brindó un ejemplo de variables y sus interacciones. De esta manera, el grupo conoció la metodología específica para definir variables e interacciones.
 
+<<<<<<< HEAD
+6. **Ejercicio participativo de identificación de variables**
+
+    a. Mecánica del ejercicio:
+=======
 6.  **Ejercicio participativo de identificación de variables**
 
 Construcción colaborativa de Redes Bayesianas
@@ -148,6 +162,7 @@ Se explico a propuesta de usar *Miro* como plataforma de debate y construcción 
 :::
 
 a)  Mecánica del ejercicio:
+>>>>>>> 0d1c9a685e0dfa699f1a358c3fe5de14fc5ceac9
 
 Una vez que se introdujo al grupo de trabajo a la metodología de identificación de variables, se realizó un ejercicio donde el grupo participó a través de notas digitales tipo post-it en un pizarrón digital en la plataforma Miro (ver Fig. 1). Para esto, el equipo facilitador había preparado previamente el pizarrón de trabajo, se propusieron variables que ya se habían identificado, además de presentar el ejemplo de un caso que se desarrolló en un proyecto previo.
 
@@ -155,8 +170,15 @@ Una vez que se introdujo al grupo de trabajo a la metodología de identificació
 
 4.  Definir los parámetros técnicos para el intercambio de información entre el equipo de trabajo (resolución, formato, metadatos, etc.).
 
+
 **Resultados generados:**
 
+<<<<<<< HEAD
+1. Mural digital con la lista de variables potenciales identificada por el grupo de trabajo, la cual incluye fuente de datos, la escala de información y la persona que propuso la variable y que podría gestionar el acceso a la información.
+2. Lista de fuentes de información adicionales que puedan servir como insumo para el modelaje.
+3. Tabla de acuerdos con tareas y responsables para la siguiente fase del proyecto.
+
+=======
 1.  Mural digital con la lista de variables potenciales identificada por el grupo de trabajo, la cual incluye fuente de datos, la escala de información y la persona que propuso la variable y que podría gestionar el acceso a la información.
 
 2.  Lista de fuentes de información adicionales que puedan servir como insumo para el modelaje.
@@ -247,3 +269,4 @@ datos_miro$nodes %>%
   fontsize(size = 8)
 
 ```
+>>>>>>> 0d1c9a685e0dfa699f1a358c3fe5de14fc5ceac9

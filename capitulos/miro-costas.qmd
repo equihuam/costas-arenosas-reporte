@@ -8,6 +8,8 @@ editor_options:
 
 ![](images/fisiografia.png)
 
+<<<<<<< HEAD
+=======
 [Characterization of Surface Evidence of Groundwater Flow Systems](https://www.mdpi.com/2073-4441/12/9/2459)
 
 ## Agenda
@@ -188,3 +190,4 @@ datos_miro$nodes %>%
 
 ```
 
+>>>>>>> 0d1c9a685e0dfa699f1a358c3fe5de14fc5ceac9
