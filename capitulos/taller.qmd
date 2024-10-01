@@ -18,7 +18,7 @@ Presentar la visión integral del proyecto, su origen, fundamentos teórico-meto
 
 Los talleres realizados el 29 y 31 de mayo contaron con la participación de 14 personas que conforman el grupo núcleo de trabajo del proyecto (ocho mujeres y seis hombres, tres participando en línea), provenientes del Instituto de Ingeniería de la UNAM, el Instituto de Ecología A. C. y la UAM -- Xochimilco. Las listas de participantes se encuentran en este [Archivo](Taller/Anexo-1.pdf).
 
-El taller se realizó con un enfoque participativo, para lo cual, se preparó un [pizarrón digital en la plataforma virtual **Miro**](https://miro.com/welcomeonboard/ckhlZ3lXY1djM0FXd3ZIZmlpV3FUVXFONGJsUFJ0NGFIaWw0eGdHOHBDalhDdFk1Zjg1MUVOZTNMUmZaNDhPVHwzMDc0NDU3MzUyMDM4MTIwMjcwfDI=?share_link_id=865983900620) y las presentaciones fueron depositadas en el [sitio Web de trabajo para el proyecto](https://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n). El instrumento de planeación del taller (carta descriptiva) con la propuesta de actividades detalladas se encuentra en el anexo 2.
+El taller se realizó con un enfoque participativo, para lo cual, se preparó un [pizarrón digital en la plataforma virtual **Miro**](https://miro.com/app/board/uXjVKB6PRSY=/) y las presentaciones fueron depositadas en el [sitio Web de trabajo para el proyecto](https://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n). El instrumento de planeación del taller (carta descriptiva) con la propuesta de actividades detalladas se encuentra en el anexo 2.
 
 A continuación, se presentan la descripción del desarrollo de las actividades durante los tres días de trabajo.
 
@@ -183,14 +183,14 @@ library(bnviewer)
 library(tidyverse, quietly = TRUE, warn.conflicts = FALSE)
 library(flextable)
 
-tableros <- miroBoards(servMiro = "miro", user = "miguel-edu-token")
+tableros <- miroBoards(servMiro = "costas", user = "miguel")
 tableros[, c("name", "id")]
 
 tablero_tr <- tableros %>%
               filter(str_detect(name, "Costa")) %>%
               select(id, name)
 
-datos_miro <- getMiro(servMiro = "miro", user = "miguel-edu-token",
+datos_miro <- getMiro(servMiro = "costas", user = "miguel",
                         board = tablero_tr)
 
 miroValidation(datos_miro)
