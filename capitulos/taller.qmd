@@ -1,3 +1,7 @@
+---
+prefer-html: true
+---
+
 # Taller
 
 **Taller de arranque del grupo de trabajo para unificar metodologías y determinar las variables a analizar**
@@ -19,7 +23,7 @@ Presentar la visión integral del proyecto, su origen, fundamentos teórico-meto
 
 Los talleres realizados el 29 y 31 de mayo contaron con la participación de 14 personas que conforman el grupo núcleo de trabajo del proyecto (ocho mujeres y seis hombres, tres participando en línea), provenientes del Instituto de Ingeniería de la UNAM, el Instituto de Ecología A. C. y la UAM -- Xochimilco. Las listas de participantes se encuentran en este [Archivo](Taller/Anexo-1.pdf).
 
-El taller se realizó con un enfoque participativo, para lo cual, se preparó un [pizarrón digital en la plataforma virtual **Miro**](https://miro.com/app/board/uXjVKB6PRSY=/) y las presentaciones fueron depositadas en el [sitio Web de trabajo para el proyecto](https://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n). El instrumento de planeación del taller (carta descriptiva) con la propuesta de actividades detalladas se encuentra en el anexo 2.
+El taller se realizó con un enfoque participativo, para lo cual, se preparó un [pizarrón digital en la plataforma virtual **Miro**](https://miro.com/welcomeonboard/ckhlZ3lXY1djM0FXd3ZIZmlpV3FUVXFONGJsUFJ0NGFIaWw0eGdHOHBDalhDdFk1Zjg1MUVOZTNMUmZaNDhPVHwzMDc0NDU3MzUyMDM4MTIwMjcwfDI=?share_link_id=865983900620) y las presentaciones fueron depositadas en el [sitio Web de trabajo para el proyecto](https://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n). El instrumento de planeación del taller (carta descriptiva) con la propuesta de actividades detalladas se encuentra en el anexo 2.
 
 A continuación, se presentan la descripción del desarrollo de las actividades durante los tres días de trabajo.
 
@@ -65,15 +69,9 @@ En esta primera presentación se destacaron algunos argumentos de la necesidad q
 
 Las presentaciones están disponibles en el blog donde se subirán los materiales del proyecto: <https://sw-costas-arenosas.netlify.app/presentaciones>
 
-<<<<<<< HEAD
-Las presentaciones están disponibles en el blog donde se subirán los materiales del proyecto: 
-
 [https://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n](https://sw-costas-arenosas.netlify.app/presentaciones#category=presentaci%C3%B3n)
 
-3. **Descripción del proyecto y marco teórico**
-=======
 3.  **Descripción del proyecto y marco teórico**
->>>>>>> 0d1c9a685e0dfa699f1a358c3fe5de14fc5ceac9
 
 En la segunda parte de la mañana del día 1, se expusieron las generalidades del proyecto, el marco conceptual, los compromisos establecidos para las tres etapas del proyecto, presupuesto, avances y tiempos estimados.
 
@@ -91,9 +89,9 @@ La entrega de la primera etapa del proyecto es el día 27 de junio de 2024, por 
 
 Posteriormente, el Dr. Miguel Equihua brindó un panorama de los fundamentos teóricos en los que se sustenta el proyecto, principalmente explicando el proceso de análisis de interdependencias condicionadas a partir de las redes bayesianas (directed acyclic graph- DAG sensu [@pearl2018book]) (ver [blog](https://sw-costas-arenosas.netlify.app/presentaciones):
 
-En la presentación se destacó la importancia de hacer la ciencia reproducible, lo que es un DAG, su anatomía, la terminología básica (noto, arista, variable explicativa, respuesta, ancestros, descendientes), las reglas de independencia condicional y la separación condicional. Después del planteamiento teórico, se explicó cómo se busca construir el DAG de integridad costera. Finalmente se presentó el fundamento de la ciencia abierta y los principios FAIR.
+En la presentación se destacó la importancia de hacer la ciencia reproducible, lo que es un DAG, su anatomía, la terminología básica (nodo, arista, variable explicativa, respuesta, ancestros, descendientes), las reglas de independencia condicional y la separación condicional. Después del planteamiento teórico, se explicó cómo se busca construir el DAG de integridad costera. Finalmente se presentó el fundamento de la ciencia abierta y los principios FAIR.
 
-De esta manera, las/os participantes reconocieron las bases del proyecto y su propuesta de desarrollo. Al terminar la exposición hubo un breve espacio para algunas dudas o inquietudes, incluyendo a las personas que atendieron en línea.
+De esta manera, las/os participantes reconocieron las bases del proyecto y su propuesta de desarrollo. Al terminar la exposición hubo un breve espacio para aclarar algunas dudas o inquietudes, incluyendo a las personas que atendieron en línea.
 
 4.  **Presentación de la estrategia metodológica**
 
@@ -111,7 +109,7 @@ A lo largo del día se plantearon diversas inquietudes, por ejemplo:
 
 -   Definir si el grupo estaba en posibilidades de un estudio de caso a profundidad en la Península de Yucatán.
 
--   Considerar si se considerará información de la cuenca a nivel superficial y/o a los acuíferos.
+-   Considerar si se tomará en cuenta información de la cuenca a nivel superficial y/o a los acuíferos subterraneos.
 
 -   Definir la temporalidad, qué años y si se toman las dos temporadas para las costas.
 
@@ -146,12 +144,11 @@ Al inicio del día 2, se continuó con el tema de gestión de datos y se present
 
 Posteriormente se brindó un ejemplo de variables y sus interacciones. De esta manera, el grupo conoció la metodología específica para definir variables e interacciones.
 
-<<<<<<< HEAD
+
 6. **Ejercicio participativo de identificación de variables**
 
     a. Mecánica del ejercicio:
-=======
-6.  **Ejercicio participativo de identificación de variables**
+
 
 Construcción colaborativa de Redes Bayesianas
 
@@ -162,7 +159,6 @@ Se explico a propuesta de usar *Miro* como plataforma de debate y construcción 
 :::
 
 a)  Mecánica del ejercicio:
->>>>>>> 0d1c9a685e0dfa699f1a358c3fe5de14fc5ceac9
 
 Una vez que se introdujo al grupo de trabajo a la metodología de identificación de variables, se realizó un ejercicio donde el grupo participó a través de notas digitales tipo post-it en un pizarrón digital en la plataforma Miro (ver Fig. 1). Para esto, el equipo facilitador había preparado previamente el pizarrón de trabajo, se propusieron variables que ya se habían identificado, además de presentar el ejemplo de un caso que se desarrolló en un proyecto previo.
 
@@ -170,15 +166,8 @@ Una vez que se introdujo al grupo de trabajo a la metodología de identificació
 
 4.  Definir los parámetros técnicos para el intercambio de información entre el equipo de trabajo (resolución, formato, metadatos, etc.).
 
-
 **Resultados generados:**
 
-<<<<<<< HEAD
-1. Mural digital con la lista de variables potenciales identificada por el grupo de trabajo, la cual incluye fuente de datos, la escala de información y la persona que propuso la variable y que podría gestionar el acceso a la información.
-2. Lista de fuentes de información adicionales que puedan servir como insumo para el modelaje.
-3. Tabla de acuerdos con tareas y responsables para la siguiente fase del proyecto.
-
-=======
 1.  Mural digital con la lista de variables potenciales identificada por el grupo de trabajo, la cual incluye fuente de datos, la escala de información y la persona que propuso la variable y que podría gestionar el acceso a la información.
 
 2.  Lista de fuentes de información adicionales que puedan servir como insumo para el modelaje.
@@ -205,14 +194,15 @@ library(bnviewer)
 library(tidyverse, quietly = TRUE, warn.conflicts = FALSE)
 library(flextable)
 
-tableros <- miroBoards(servMiro = "costas", user = "miguel")
+
+tableros <- miroBoards(servMiro = "miro", user = "miguel-edu-token")
 tableros[, c("name", "id")]
 
 tablero_tr <- tableros %>%
               filter(str_detect(name, "Costa")) %>%
               select(id, name)
 
-datos_miro <- getMiro(servMiro = "costas", user = "miguel",
+datos_miro <- getMiro(servMiro = "miro", user = "miguel-edu-token",
                         board = tablero_tr)
 
 miroValidation(datos_miro)
@@ -269,4 +259,14 @@ datos_miro$nodes %>%
   fontsize(size = 8)
 
 ```
->>>>>>> 0d1c9a685e0dfa699f1a358c3fe5de14fc5ceac9
+
+## Datos
+
+![](images/fisiografia.png)
+
+[Characterization of Surface Evidence of Groundwater Flow Systems](https://www.mdpi.com/2073-4441/12/9/2459)
+
+
+Hemos reunido una clección de datos y las hemos hecho [disponibles en esta página](https://datos.coastal-eii.net/). Estamos trabajando en la construcción de un geoportal formal **FAIR**, que habremos de publicar póximamente.
+
+

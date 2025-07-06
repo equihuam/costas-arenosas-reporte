@@ -26,7 +26,9 @@ book:
         [Costas Arenosas](https://sw-costas-arenosas.netlify.app/).
       right: |
         Reporte preparado con <a href="https://quarto.org/">Quarto</a>.
+        
   cover-image: images/landscape-546343_1280.jpg
+  
   author:
     - name: Octavio Pérez-Maqueo 
       url: https://inecol.mx/
@@ -48,20 +50,16 @@ css: costas.css
 format:
   html:
     theme: materia
+    
   titlepage-pdf:
     titlepage: bg-image
     papersize: letter
     prefer-html: true
-<<<<<<< HEAD
-  epub:
-    cover-image: images/cover.png
-    prefer-html: true
-     
-=======
+    
+    coverpage: true
     documentclass: scrbook
     cite-method: citeproc
     citation: true
-    coverpage: true
     coverpage-bg-image: "images/landscape-546343_1280.jpg"
     coverpage-title: "Estimación de la integridad ecosistémica de las costas arenosas mexicanas a través de técnicas de aprendizaje de máquina"
     coverpage-footer: "Proyecto Conahcyt de ciencia de frontera (CF-2023-G-1497)"
@@ -87,8 +85,6 @@ format:
       footer-bottom: "3in"
       date-style: "none"
       bg-image-fading: "north"
-
->>>>>>> 0d1c9a685e0dfa699f1a358c3fe5de14fc5ceac9
 execute: 
   freeze: true
 

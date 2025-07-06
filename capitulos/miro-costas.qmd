@@ -4,13 +4,14 @@ comments:
 editor_options: 
   chunk_output_type: console
 ---
-# Datos
+
+## Datos
 
 ![](images/fisiografia.png)
 
-<<<<<<< HEAD
-=======
 [Characterization of Surface Evidence of Groundwater Flow Systems](https://www.mdpi.com/2073-4441/12/9/2459)
+
+
 
 ## Agenda
 
@@ -111,16 +112,19 @@ Una vez registrada en el equipo la llave, queda lista para su uso en cualquier m
 #| message: false
 #| warning: false
 
+#if (!require("BiocManager", quietly = TRUE))
+#    install.packages("BiocManager")
+#remove.packages("Rgraphviz")
+
 if (!require(miro2bayes))
 {
   library(devtools)
   install_github("equihuam/miro2bayesNet", force = TRUE)
 }
 
-library(miro2bayes)
-library(bnlearn)
-library(bnviewer)
-library(tidyverse, quietly = TRUE, warn.conflicts = FALSE)
+pacman::p_load(BiocManager, Rgraphviz, miro2bayes, 
+               bnlearn, bnviewer,tidyverse)
+pacman::p_unload(BiocManager, BiocGenerics)
 
 tableros <- miroBoards(servMiro = "miro", user = "miguel-edu-token")
 tableros[, c("name", "id")]
@@ -139,7 +143,6 @@ miroValidation(datos_miro)
 #write(neticaMiro, "costa-arenosa.dne")
 
 netMiro_bn <- miro2bnlearn(datos_miro)
-netMiro_bn
 
 variables <- tibble(var = datos_miro$nodes$var)
 
@@ -182,12 +185,12 @@ datos_miro$nodes <-
 datos_miro$nodes %>%   
   select(text, var, color) %>% 
   flextable() %>% 
-  width(j=1, width = 12, unit = "cm") %>% 
-  width(j=2:3, width = 2, unit = "cm") %>% 
-  padding(j = 1, padding.right = 50) %>% 
-  fontsize(size = 8, part = "header") %>% 
-  fontsize(size = 8)
+    width(j = 1, width = 12, unit = "cm") %>% 
+    width(j=2:3, width = 2, unit = "cm") %>% 
+    padding(j = 1, padding.right = 50) %>% 
+    fontsize(size = 8, part = "header") %>% 
+    fontsize(size = 8)
 
 ```
 
->>>>>>> 0d1c9a685e0dfa699f1a358c3fe5de14fc5ceac9
+
